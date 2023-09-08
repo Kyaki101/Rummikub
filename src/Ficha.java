@@ -1,5 +1,6 @@
 import java.util.*;
-public class Ficha {
+import javax.swing.*;
+public class Ficha extends JLabel{
     private String color;
     private int num;
 
@@ -30,9 +31,12 @@ public class Ficha {
     }
 
     Ficha(int num, String color){
+        ImageIcon image = new ImageIcon("logo.png");
         setNum(num);
         setColor(color);
         this.comodin = false;
+        this.setText("testing");
+        this.setIcon(image);
     }
 
     Ficha(boolean joker){
