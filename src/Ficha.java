@@ -1,7 +1,8 @@
-import java.util.*;
 import javax.swing.*;
+import java.awt.*;
+
 public class Ficha extends JLabel{
-    private String color;
+    private Color color;
     private int num;
 
     private boolean comodin;
@@ -10,12 +11,13 @@ public class Ficha extends JLabel{
         return num;
     }
 
-    public String getColor() {
-        return color;
+
+    public void setColor(Color color) {
+        this.color = color;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public Color getColor(){
+        return this.color;
     }
 
     public void setNum(int num) {
@@ -30,17 +32,26 @@ public class Ficha extends JLabel{
         this.comodin = comodin;
     }
 
-    Ficha(int num, String color){
-        ImageIcon image = new ImageIcon("logo.png");
+    Ficha(int num, Color color){
+        ImageIcon image = new ImageIcon("res/images/ficha.png");
+//        Image newImage = image.getImage().getScaledInstance(100, 120, Image.SCALE_DEFAULT);
+//        ImageIcon update = new ImageIcon(newImage);
         setNum(num);
         setColor(color);
         this.comodin = false;
-        this.setText("testing");
+        this.setText(String.valueOf(getNum()));
+        this.setFont(new Font("SansSerif", Font.BOLD, 75));
+        this.setForeground(color);
+        this.setHorizontalTextPosition(this.CENTER);
         this.setIcon(image);
+        this.setSize(100, 100);
+        this.setVerticalAlignment(this.CENTER);
+        this.setHorizontalAlignment(this.CENTER);
+        this.setBounds(0, 0, 800, 800);
     }
 
     Ficha(boolean joker){
-        this.color = "";
+        this.color = Color.WHITE;
         this.num = 0;
         setComodin(joker);
     }
