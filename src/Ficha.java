@@ -51,8 +51,16 @@ public class Ficha extends JLabel{
     }
 
     Ficha(boolean joker){
+        ImageIcon image = new ImageIcon("res/images/ficha.png");
         this.color = Color.WHITE;
         this.num = 0;
         setComodin(joker);
+        this.setText("J");
+        this.setFont(new Font("SansSerif", Font.BOLD, 75));
+        this.setHorizontalTextPosition(this.CENTER);
+        this.setVerticalAlignment(this.CENTER);
+        this.setHorizontalAlignment(this.CENTER);
+        this.setBounds(0, 0, 800, 800);
+
     }
 }
