@@ -1,7 +1,14 @@
 import java.util.List;
+import java.util.ArrayList;
 public class Player {
+
+
+    
     private int cant;
     private List<Ficha> fichas;
+
+
+
 
     public int getCant() {
         return cant;
@@ -29,7 +36,15 @@ public class Player {
         this.cant ++;
     }
 
-    Player(){
-        this.cant = 0;
+
+
+    Player(List<Ficha> f){
+        
+        this.fichas = new ArrayList<>();
+        for(int i = 0; i < 14; i ++){
+            fichas.add(f.get(i));
+            f.remove(i);
+        }
+
     }
 }
