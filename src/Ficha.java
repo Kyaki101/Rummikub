@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class Ficha extends JLabel{
+public class Ficha{
     private Color color;
     private int num;
 
@@ -33,13 +33,14 @@ public class Ficha extends JLabel{
     }
 
     Ficha(int num, Color color){
-        ImageIcon image = new ImageIcon("res/images/ficha.png");
+        //ImageIcon image = new ImageIcon("res/images/ficha.png");
 //        Image newImage = image.getImage().getScaledInstance(100, 120, Image.SCALE_DEFAULT);
 //        ImageIcon update = new ImageIcon(newImage);
         setNum(num);
         setColor(color);
         this.comodin = false;
-        this.setText(String.valueOf(getNum()));
+
+        /*this.setText(String.valueOf(getNum()));
         this.setFont(new Font("SansSerif", Font.BOLD, 75));
         this.setForeground(color);
         this.setHorizontalTextPosition(this.CENTER);
@@ -47,20 +48,21 @@ public class Ficha extends JLabel{
         this.setSize(100, 100);
         this.setVerticalAlignment(this.CENTER);
         this.setHorizontalAlignment(this.CENTER);
-        this.setBounds(0, 0, 800, 800);
+        this.setBounds(0, 0, 800, 800);*/
+        
     }
 
     Ficha(boolean joker){
-        ImageIcon image = new ImageIcon("res/images/ficha.png");
+        //ImageIcon image = new ImageIcon("res/images/ficha.png");
         this.color = Color.WHITE;
         this.num = 0;
         setComodin(joker);
-        this.setText("J");
+        /*this.setText("J");
         this.setFont(new Font("SansSerif", Font.BOLD, 75));
         this.setHorizontalTextPosition(this.CENTER);
         this.setVerticalAlignment(this.CENTER);
         this.setHorizontalAlignment(this.CENTER);
-        this.setBounds(0, 0, 800, 800);
+        this.setBounds(0, 0, 800, 800); */
 
     }
 }
