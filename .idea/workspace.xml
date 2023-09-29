@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83426df5-8294-4cf9-8611-de2a1aaeb2e6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Hello.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Hello.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +27,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="jar:///Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/lib/src.zip!/java.base/jdk/internal/misc/Unsafe.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Ficha.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/Player.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/Tablero.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProblemsViewState">
@@ -75,6 +78,8 @@
       <workItem from="1694206546020" duration="16101000" />
       <workItem from="1694230639428" duration="899000" />
       <workItem from="1694294444551" duration="2726000" />
+      <workItem from="1694387402764" duration="842000" />
+      <workItem from="1696021314531" duration="1958000" />
     </task>
     <servers />
   </component>
