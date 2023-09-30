@@ -21,5 +21,11 @@ public class Main {
 
         System.out.println("Fichas en la mano de Luis:");
         System.out.println(luis);
+
+        for(int i = 0; i<78; i++){
+
+            System.out.println(a.getCola().get(i));
+        }
+
     }
 }
