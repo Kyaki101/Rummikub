@@ -18,7 +18,11 @@ public class Almacen {
             cola.add(new Ficha(i % 13 + 1, colors[i / 13]));
             cola.add(new Ficha(i % 13 + 1, colors[i / 13]));
         }
+        cola.add(new Ficha(true));
+        cola.add(new Ficha(true));
     }
+
+
 
     // Método getter para obtener la lista de fichas en el almacén
     public List<Ficha> getCola(){
