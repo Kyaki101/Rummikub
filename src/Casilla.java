@@ -16,27 +16,39 @@ public class Casilla {
 
     private boolean verifyGroup(){
 
+        int i = 0;
+        while(GroupNSerie.get(i).getJoker()) i++;
+        while(i<GroupNSerie.size()-1){
 
-        for(int i = 0; i<GroupNSerie.size()-1; i++){
+            if(GroupNSerie.get(i+1).getJoker()) GroupNSerie.get(i+1).setNumero(GroupNSerie.get(i).getNumero());
+            if(GroupNSerie.get(i).getNumero() != GroupNSerie.get(i+1).getNumero()) return false;
+            i++;
 
-            if(GroupNSerie.get(i).getNumero() != GroupNSerie.get(i+1).getNumero()){
-                return false;
-            }
-        }
-        return true;
+        }return true;
     }
 
-    //falta añadir la verificacion con jokers
+
     private boolean verifySerie(){
 
-        for(int i = 0; i<GroupNSerie.size()-1; i++){
+        int i = 0;
+        while(GroupNSerie.get(i).getJoker()) i++;
+        while(i<GroupNSerie.size()-1){
 
+            if(GroupNSerie.get(i+1).getJoker()){
+                GroupNSerie.get(i+1).setNumero(GroupNSerie.get(i).getNumero()+1);
+                GroupNSerie.get(i+1).setColor(GroupNSerie.get(i).getColor());
+            }
             if(GroupNSerie.get(i).getColor() != GroupNSerie.get(i+1).getColor() ||
                     GroupNSerie.get(i).getNumero() != GroupNSerie.get(i+1).getNumero()-1){
                 return false;
             }
+            i++;
+
         }return true;
     }
+
+
+
 
 
 
@@ -46,11 +58,21 @@ public class Casilla {
 
         if (GroupNSerie.size() < 3) return false;
 
+        for(int i = 0; i<3; i++) if(GroupNSerie.get(i).getJoker())  return verifySerie() || verifyGroup();
+
         if (GroupNSerie.get(0).getColor() != GroupNSerie.get(1).getColor()) return verifyGroup();
 
         return verifySerie();
 
     }
+
+
+
+
+
+
+
+
 
 
     public void addFicha(Ficha ficha, int i){
@@ -67,6 +89,9 @@ public class Casilla {
     public void removeFicha(){
         GroupNSerie.remove(GroupNSerie.size()-1);
     }
+
+
+
 
 
     public String toString(){

@@ -5,13 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83426df5-8294-4cf9-8611-de2a1aaeb2e6" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/Ficha.java&#10;#&#9;src/Main.java&#10;#&#9;src/Tablero.java">
+      <change afterPath="$PROJECT_DIR$/src/Almacen.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Baraja.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Ficha.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Almacen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Almacen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ficha.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ficha.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Baraja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Baraja.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Casilla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Casilla.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ficha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ficha.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tablero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
     </list>
     <list id="d6a43b76-dc18-4f6a-ba22-05b274cc1efe" name="Changes by daniloduque" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,6 +99,20 @@
       <recent name="$PROJECT_DIR$/src/images" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="rummikub" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -110,6 +131,8 @@
       <workItem from="1696346304796" duration="183000" />
       <workItem from="1696445471302" duration="2686000" />
       <workItem from="1696455739740" duration="1376000" />
+      <workItem from="1696538058982" duration="46000" />
+      <workItem from="1696538129825" duration="5097000" />
     </task>
     <task id="LOCAL-00001" summary="tablero">
       <option name="closed" value="true" />
