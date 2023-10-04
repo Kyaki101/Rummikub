@@ -6,35 +6,21 @@ public class Ficha {
     // Variables de instancia para almacenar el número y el color de la ficha
     private int numero;
     private Color color;
-    private boolean esJoker;
+
+    private boolean isJoker;
 
     // Constructor de la clase Ficha que recibe un número y un color como parámetros
     public Ficha(int numero, Color color){
         // Inicializa las variables de instancia con los valores proporcionados
-        this.esJoker = false;
+        this.isJoker = false;
         this.numero = numero;
         this.color = color;
     }
 
-    public Ficha(boolean jok){
-
-        this.esJoker = jok;
+    public Ficha(boolean a){
+        this.isJoker = a;
         this.numero = 0;
         this.color = Color.WHITE;
-
-    }
-
-
-
-
-
-
-
-
-
-
-    public boolean getJoker(){
-        return esJoker;
     }
 
     // Método getter para obtener el número de la ficha
@@ -60,7 +46,6 @@ public class Ficha {
     // Método toString() que devuelve una representación de cadena de la ficha
     public String toString(){
         // Devuelve el número y el color de la ficha como una cadena
-        return "" + numero + " " + color + " " + esJoker + '\n';
-
+        return "" + numero + " " + color + '\n';
     }
 }

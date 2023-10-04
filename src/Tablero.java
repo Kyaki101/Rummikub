@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class Tablero{
 
 
+
     public Casilla[] tablero = new Casilla[100];
 
 
@@ -21,8 +22,6 @@ public class Tablero{
 
 
     }
-
-
 
 
 
@@ -58,13 +57,12 @@ public class Tablero{
 
 
 
-    public void imprimirTablero(){
-        for(int i = 0; i < 100; i++){
+    public void imprimirTablero() {
+        for (int i = 0; i < 100; i++) {
             System.out.println(tablero[i]);
+
         }
     }
-
-
 
 
 

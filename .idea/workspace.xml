@@ -4,21 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83426df5-8294-4cf9-8611-de2a1aaeb2e6" name="Changes" comment="tablero">
-      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Almacen.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Baraja.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Casilla.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Casilla.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ficha.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Player.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tablero.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="83426df5-8294-4cf9-8611-de2a1aaeb2e6" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/Ficha.java&#10;#&#9;src/Main.java&#10;#&#9;src/Tablero.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Almacen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Almacen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ficha.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ficha.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ficha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ficha.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tablero.java" afterDir="false" />
     </list>
     <list id="d6a43b76-dc18-4f6a-ba22-05b274cc1efe" name="Changes by daniloduque" comment="" />
@@ -49,6 +41,7 @@
         </map>
       </branch-storage>
     </favorite-branches>
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
@@ -116,7 +109,7 @@
       <workItem from="1696116292353" duration="1803000" />
       <workItem from="1696346304796" duration="183000" />
       <workItem from="1696445471302" duration="2686000" />
-      <workItem from="1696455739740" duration="571000" />
+      <workItem from="1696455739740" duration="1376000" />
     </task>
     <task id="LOCAL-00001" summary="tablero">
       <option name="closed" value="true" />
@@ -134,7 +127,23 @@
       <option name="project" value="LOCAL" />
       <updated>1696118028612</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="tablero">
+      <option name="closed" value="true" />
+      <created>1696456450648</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696456450648</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/Ficha.java&#10;#&#9;src/Main.java&#10;#&#9;src/Tablero.java">
+      <option name="closed" value="true" />
+      <created>1696456564544</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1696456564544</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +163,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="tablero" />
-    <option name="LAST_COMMIT_MESSAGE" value="tablero" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/Ficha.java&#10;#&#9;src/Main.java&#10;#&#9;src/Tablero.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/Ficha.java&#10;#&#9;src/Main.java&#10;#&#9;src/Tablero.java" />
   </component>
 </project>
