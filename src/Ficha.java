@@ -13,6 +13,15 @@ public class Ficha {
         this.color = color;
     }
 
+
+    public Ficha(Ficha a){
+
+        this.isJoker = a.getJoker();
+        this.numero = a.getNumero();
+        this.color = a.getColor();
+
+    }
+
     public Ficha(boolean a){
         this.isJoker = a;
         this.numero = 0;

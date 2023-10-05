@@ -16,6 +16,22 @@ public class Tablero{
 
     }
 
+
+    public Tablero(Tablero t){
+
+        for(int i = 0; i < 100; i++){
+
+            if(!t.getTablero()[i].getCasilla().isEmpty()) tablero[i].copy(t.getTablero()[i]);
+
+        }
+    }
+
+
+
+
+
+
+
     public void añadirFicha(Ficha ficha, int posicion){
 
         tablero[posicion].addFicha(ficha);
@@ -25,7 +41,14 @@ public class Tablero{
 
 
 
+    public boolean verify(){
 
+        for(int i = 0; i<100; i++){
+
+            if(!tablero[i].verify()) return false;
+
+        }return true;
+    }
 
 
     public void insertarFicha(Ficha ficha, int posicion, int i){
@@ -35,6 +58,17 @@ public class Tablero{
     }
 
 
+
+    public void copy(Tablero t){
+
+        for(int i = 0; i < 100; i++){
+
+            if(!t.getTablero()[i].getCasilla().isEmpty()) tablero[i].copy(t.getTablero()[i]);
+            else tablero[i].getCasilla().clear();
+
+        }
+
+    }
 
 
 
@@ -59,11 +93,15 @@ public class Tablero{
 
     public void imprimirTablero() {
         for (int i = 0; i < 100; i++) {
-            System.out.println(tablero[i]);
+            if(!tablero[i].getCasilla().isEmpty()) System.out.println(tablero[i]);
 
         }
     }
 
+
+    public Casilla[] getTablero() {
+        return tablero;
+    }
 
 
 

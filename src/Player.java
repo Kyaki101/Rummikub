@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Scanner;
 
 public class Player {
@@ -14,6 +15,36 @@ public class Player {
 
 
     }
+
+    public Player(){
+
+        name = "";
+        deck = new Baraja();
+
+    }
+
+    public List<Ficha> getDeck() {
+        return deck.getFichas();
+    }
+
+
+    public Player(Player a){
+
+        deck = new Baraja();
+        name = a.getName();
+        for(int i = 0; i<a.getDeck().size(); i++){
+            deck.getFichas().add(a.getDeck().get(i));
+        }
+
+    }
+
+
+
+
+
+
+
+
 
 
 
@@ -42,6 +73,30 @@ public class Player {
 
     }
 
+
+    public Ficha eliminarFicha(int i){
+
+        Ficha f = deck.getFichas().get(i);
+        deck.getFichas().remove(i);
+        return f;
+
+    }
+
+
+
+
+
+
+
+
+    public void copy(Player a){
+
+        deck = new Baraja();
+        name = a.getName();
+        for(int i = 0; i<a.getDeck().size(); i++){
+            deck.getFichas().add(a.getDeck().get(i));
+        }
+    }
 
 
 }
