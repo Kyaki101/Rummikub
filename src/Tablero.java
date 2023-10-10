@@ -4,8 +4,8 @@ import java.util.ArrayList;
 public class Tablero{
 
 
-
     public Casilla[] tablero = new Casilla[100];
+
 
 
     public Tablero(){
@@ -97,6 +97,15 @@ public class Tablero{
 
         }
     }
+
+
+
+
+
+
+
+
+    
 
 
     public Casilla[] getTablero() {

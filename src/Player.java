@@ -3,11 +3,15 @@ import java.util.Scanner;
 
 public class Player {
 
-    Baraja deck;
-    String name;
+
+    private boolean winner;
+    private int points;
+    private Baraja deck;
+    private String name;
 
     public Player(Almacen a) {
 
+        points = 0;
         System.out.println("Ingrese el nombre del jugador: ");
         Scanner sc = new Scanner(System.in);
         name = sc.nextLine();
@@ -18,18 +22,15 @@ public class Player {
 
     public Player(){
 
+        points = 0;
         name = "";
         deck = new Baraja();
 
     }
 
-    public List<Ficha> getDeck() {
-        return deck.getFichas();
-    }
-
-
     public Player(Player a){
 
+        points = a.getPoints();
         deck = new Baraja();
         name = a.getName();
         for(int i = 0; i<a.getDeck().size(); i++){
@@ -37,6 +38,18 @@ public class Player {
         }
 
     }
+
+
+
+
+
+
+    public List<Ficha> getDeck() {
+        return deck.getFichas();
+    }
+
+
+
 
 
 
@@ -63,15 +76,27 @@ public class Player {
     }
 
 
+
+
+
+
+
+
+
+
+
     public String toString(){
 
         String s = "";
         for(int i = 0; i < deck.getFichas().size(); i++){
-            s += deck.getFichas().get(i).toString();
+            s += i + ".  " + deck.getFichas().get(i).toString();
         }return  "\n\n" + s;
 
 
     }
+
+
+
 
 
     public Ficha eliminarFicha(int i){
@@ -98,5 +123,52 @@ public class Player {
         }
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+    public void setPoints(int i){
+        points = i;
+    }
+    public void addPoints(int i){
+        points += i;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+
+    public int sumPoints(){
+
+        if(deck.getFichas().isEmpty()) return 0;
+        int sum = 0;
+        for(int i = 0; i<deck.getFichas().size(); i++){
+
+            if(deck.getFichas().get(i).getJoker()) sum+= 30;
+            else
+                sum += deck.getFichas().get(i).getNumero();
+
+        }return sum;
+
+    }
+
+
+
+    public boolean getWinner(){
+        return winner;
+    }
+
+    public void setWinner(){
+        winner = true;
+    }
 
 }

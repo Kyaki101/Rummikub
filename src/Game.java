@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Game {
 
     private Tablero tablero;
+
     private List<Player> players = new ArrayList<>();
 
     private Almacen almacen;
@@ -14,6 +15,9 @@ public class Game {
     private int size, x, y, z, a, b, c;
 
     String ins;
+
+
+
 
 
 
@@ -62,9 +66,9 @@ public class Game {
 
 
 
+    //esta funcion retorna una lista de los jugadores con sus respectivos puntajes, para que archive los guarde
 
-
-    public boolean Turn(){
+    public List<Player> Turn(){
 
         Player jug = new Player(players.get(turn));
         Tablero tab = new Tablero();
@@ -77,7 +81,8 @@ public class Game {
         while(true) {
 
 
-
+            System.out.println("Tablero:");
+            tablero.imprimirTablero();
             System.out.println("Fichas en la mano de " + players.get(turn).getName() + ":");
             System.out.println(players.get(turn));
             System.out.print("Desea jugar o comer? (j/c): ");
@@ -89,17 +94,33 @@ public class Game {
 
                 while (true) {
 
+
                     play();
                     if (tablero.verify()) {
 
                         if (players.get(turn).Gano()) {
+
                             System.out.println("El jugador " + players.get(turn).getName() + " ha ganado");
-                            return true;
+                            players.get(turn).setWinner();
+                            this.addPointsW();
+                            return players;
+                        }
+
+                        if(almacen.getCola().isEmpty()){
+
+                            System.out.println("El juego ha terminado");
+                            this.addPointsE();
+                            return players;
+
                         }
                         this.nextTurn();
-                        this.Turn();
+                        return this.Turn();
+
+
 
                     } else {
+
+                        //probar caso de tablero duplicado
 
                         System.out.println("Jugada inválida");
                         tablero.imprimirTablero();
@@ -108,19 +129,14 @@ public class Game {
                         almacen.copy(alm);
 
                     }
-
                 }
-
-
             }
-
         }
     }
 
 
 
 
-    //falta probar el cambiar ficha
 
 
 
@@ -132,7 +148,7 @@ public class Game {
         while(true)
         {
 
-
+            //aqui falta añadir el comer
             System.out.println(players.get(turn).getName() + " desea añadir, insertar o cambiar una ficha, o exit? (a/i/c/e): ");
             Scanner sc = new Scanner(System.in);
             ins = sc.nextLine();
@@ -149,8 +165,6 @@ public class Game {
                 tablero.añadirFicha(players.get(turn).eliminarFicha(x), y);
 
 
-
-
             } else if (ins.equals("i")) {
 
                 System.out.println("Ingrese el número de ficha de su inventario: ");
@@ -160,8 +174,6 @@ public class Game {
                 System.out.println("Ingrese en que indice desea ingresar la ficha: ");
                 z = sc.nextInt();
                 tablero.insertarFicha(players.get(turn).eliminarFicha(x), y, z);
-
-
 
 
             } else if (ins.equals("c")) {
@@ -188,6 +200,46 @@ public class Game {
         }
 
     }
+
+
+    //falta el primer turno, suma de 30
+
+
+    public void addPointsW(){
+
+        int j;
+        int sum = 0;
+        for(int i = 0; i<players.size(); i++){
+
+            if(players.get(i).getWinner()) j = i;
+            sum += players.get(turn).sumPoints();
+            players.get(turn).addPoints(-players.get(turn).sumPoints());
+
+        }players.get(turn).addPoints(sum);
+    }
+
+
+    public void addPointsE(){
+
+        int max = -1, index = 0;
+        for(int i = 0; i<players.size(); i++){
+
+            if(players.get(i).sumPoints()>max) {
+                max = players.get(i).sumPoints();
+                index = i;
+            }
+
+        }
+        for(int i = 0; i<players.size(); i++){
+
+            if(i!=index) players.get(i).addPoints(-players.get(i).sumPoints());
+
+        }
+
+    }
+
+
+
 
 
 }
