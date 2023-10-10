@@ -4,8 +4,11 @@ public class Casilla {
 
     private List<Ficha> GroupNSerie = new ArrayList<>();
 
+    public Casilla(){
+        GroupNSerie = new ArrayList<>();
+    }
 
-    public List<Ficha> getCasilla(int i){
+    public List<Ficha> getCasilla(){
         return GroupNSerie;
     }
 
@@ -18,7 +21,7 @@ public class Casilla {
 
         int i = 0;
         while(GroupNSerie.get(i).getJoker()) i++;
-        while(i<GroupNSerie.size()-1){
+        while(i<GroupNSerie.size()-2){
 
             if(GroupNSerie.get(i+1).getJoker()) GroupNSerie.get(i+1).setNumero(GroupNSerie.get(i).getNumero());
             if(GroupNSerie.get(i).getNumero() != GroupNSerie.get(i+1).getNumero()) return false;
@@ -28,11 +31,13 @@ public class Casilla {
     }
 
 
+
+
     private boolean verifySerie(){
 
         int i = 0;
         while(GroupNSerie.get(i).getJoker()) i++;
-        while(i<GroupNSerie.size()-1){
+        while(i<GroupNSerie.size()-2){
 
             if(GroupNSerie.get(i+1).getJoker()){
                 GroupNSerie.get(i+1).setNumero(GroupNSerie.get(i).getNumero()+1);
@@ -41,8 +46,7 @@ public class Casilla {
             if(GroupNSerie.get(i).getColor() != GroupNSerie.get(i+1).getColor() ||
                     GroupNSerie.get(i).getNumero() != GroupNSerie.get(i+1).getNumero()-1){
                 return false;
-            }
-            i++;
+            }i++;
 
         }return true;
     }
@@ -51,18 +55,13 @@ public class Casilla {
 
 
 
-
     public boolean verify() {
 
-        if (GroupNSerie.size() == 0) return true;
+        if(GroupNSerie.isEmpty()) return true;
 
         if (GroupNSerie.size() < 3) return false;
 
-        for(int i = 0; i<3; i++) if(GroupNSerie.get(i).getJoker())  return verifySerie() || verifyGroup();
-
-        if (GroupNSerie.get(0).getColor() != GroupNSerie.get(1).getColor()) return verifyGroup();
-
-        return verifySerie();
+        return verifySerie() || verifyGroup();
 
     }
 
@@ -103,5 +102,13 @@ public class Casilla {
     }
 
 
+
+    public void copy(Casilla c){
+
+        for(int i = 0; i < c.getCasilla().size(); i++){
+            GroupNSerie.add(new Ficha(c.getCasilla().get(i)));
+        }
+
+    }
 
 }

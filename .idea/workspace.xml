@@ -4,21 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83426df5-8294-4cf9-8611-de2a1aaeb2e6" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/Ficha.java&#10;#&#9;src/Main.java&#10;#&#9;src/Tablero.java">
+    <list default="true" id="83426df5-8294-4cf9-8611-de2a1aaeb2e6" name="Changes" comment="Delete src/Player.class">
       <change afterPath="$PROJECT_DIR$/src/Almacen.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Baraja.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Casilla.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Ficha.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Game.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Main.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Player.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Tablero.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Almacen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Almacen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Baraja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Baraja.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Casilla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Casilla.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ficha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ficha.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tablero.java" afterDir="false" />
     </list>
     <list id="d6a43b76-dc18-4f6a-ba22-05b274cc1efe" name="Changes by daniloduque" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +51,11 @@
         </map>
       </branch-storage>
     </favorite-branches>
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Danilo &lt;105374584+daniloduque@users.noreply.github.com&gt;" />
+      </list>
+    </option>
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -89,6 +97,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -132,7 +141,10 @@
       <workItem from="1696445471302" duration="2686000" />
       <workItem from="1696455739740" duration="1376000" />
       <workItem from="1696538058982" duration="46000" />
-      <workItem from="1696538129825" duration="5097000" />
+      <workItem from="1696538129825" duration="5828000" />
+      <workItem from="1696811228883" duration="6669000" />
+      <workItem from="1696876763879" duration="4169000" />
+      <workItem from="1696889611849" duration="5887000" />
     </task>
     <task id="LOCAL-00001" summary="tablero">
       <option name="closed" value="true" />
@@ -166,7 +178,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696456564544</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Delete src/Player.class">
+      <option name="closed" value="true" />
+      <created>1696543327277</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696543327277</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +207,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="tablero" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/Ficha.java&#10;#&#9;src/Main.java&#10;#&#9;src/Tablero.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/Ficha.java&#10;#&#9;src/Main.java&#10;#&#9;src/Tablero.java" />
+    <MESSAGE value="Delete src/Player.class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete src/Player.class" />
   </component>
 </project>

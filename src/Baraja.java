@@ -13,6 +13,18 @@ public class Baraja {
         this.fichas = fichas;
     }
 
+    public Baraja(){
+
+        fichas = new ArrayList<>();
+
+    }
+
+
+
+    public void add(Ficha ficha){
+        fichas.add(ficha);
+    }
+
     public Baraja(List<Ficha> cola){
         for(int i = 0; i < 14; i++){
             fichas.add(cola.get(0));

@@ -6,7 +6,6 @@ public class Main {
 
         Game g = new Game(2);
         g.Turn();
-        g.Turn();
 
 
 

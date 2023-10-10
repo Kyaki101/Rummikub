@@ -19,6 +19,28 @@ public class Almacen {
     }
 
 
+    public Almacen(Almacen a){
+        for(int i = 0; i < a.getCola().size(); i++){
+            cola.add(a.getCola().get(i));
+        }
+    }
+
+
+
+
+
+
+
+
+
+    public void copy(Almacen a){
+
+        for(int i = 0; i < a.getCola().size(); i++){
+            cola.add(a.getCola().get(i));
+        }
+
+    }
+
 
     public List<Ficha> getCola(){
         return cola;
