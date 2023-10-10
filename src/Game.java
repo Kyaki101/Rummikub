@@ -1,8 +1,10 @@
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import javax.swing.*;
 
-public class Game {
+public class Game extends JFrame{
 
     private Tablero tablero;
     private List<Player> players = new ArrayList<>();
@@ -18,6 +20,14 @@ public class Game {
 
 
     public Game(int n){
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setResizable(false);
+        this.setLayout(null);
+        this.setSize(1400, 1080);
+        this.add(new Background());
+        this.setVisible(true);
+        this.add(new Tablero());
+        this.setVisible(true);
 
         size = n;
         almacen = new Almacen();

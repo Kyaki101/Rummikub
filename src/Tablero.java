@@ -1,15 +1,23 @@
+import java.awt.*;
 import java.util.List;
 import java.util.ArrayList;
+import javax.swing.*;
 
-public class Tablero{
+public class Tablero extends JPanel{
 
 
 
     public Casilla[] tablero = new Casilla[100];
 
+    ImageIcon background = new ImageIcon("res/images/tablero.png");
+
 
     public Tablero(){
-
+        JLabel bg = new JLabel();
+        bg.setIcon(background);
+        this.setBackground(new Color(155, 155, 153));
+        this.setBounds(200, 75, 1000, 600);
+        this.add(bg);
         for(int i = 0; i < 100; i++){
             tablero[i] = new Casilla();
         }
