@@ -149,7 +149,7 @@ public class Game {
         {
 
             //aqui falta añadir el comer
-            System.out.println(players.get(turn).getName() + " desea añadir, insertar o cambiar una ficha, o exit? (a/i/c/e): ");
+            System.out.println(players.get(turn).getName() + " desea añadir, insertar o swapear, comer, mover una ficha, o exit? (a/i/s/c/m/e): ");
             Scanner sc = new Scanner(System.in);
             ins = sc.nextLine();
             if (ins.equals("e")) return;
@@ -176,7 +176,7 @@ public class Game {
                 tablero.insertarFicha(players.get(turn).eliminarFicha(x), y, z);
 
 
-            } else if (ins.equals("c")) {
+            } else if (ins.equals("s")) {
 
 
                 System.out.println("Ingrese la coordenada de la casilla de la ficha 1 que desea cambiar: ");
@@ -189,8 +189,23 @@ public class Game {
                 a = sc.nextInt();
                 tablero.cambiarFicha(x, z, y, a);
 
+            }else if(ins.equals("c")) players.get(turn).comer(almacen);
 
-            } else {
+
+            else if(ins.equals("m")){
+
+                System.out.println("Ingrese la coordenada de la casilla de la ficha que desea mover: ");
+                x = sc.nextInt();
+                System.out.println("Ingrese el indice de la ficha que desea mover: ");
+                y = sc.nextInt();
+                System.out.println("Ingrese la coordenada de la casilla a la que desea mover la ficha: ");
+                z = sc.nextInt();
+                tablero.moverFicha(x, y, z);
+
+            }
+
+
+            else {
 
                 System.out.println("Jugada inválida");
                 continue;
@@ -207,7 +222,7 @@ public class Game {
 
     public void addPointsW(){
 
-        int j;
+        int j = 0;
         int sum = 0;
         for(int i = 0; i<players.size(); i++){
 
@@ -215,7 +230,8 @@ public class Game {
             sum += players.get(turn).sumPoints();
             players.get(turn).addPoints(-players.get(turn).sumPoints());
 
-        }players.get(turn).addPoints(sum);
+        }players.get(j).addPoints(sum);
+
     }
 
 
@@ -230,6 +246,8 @@ public class Game {
             }
 
         }
+
+        System.out.println("El jugador " + players.get(index).getName() + " ha ganado");
         for(int i = 0; i<players.size(); i++){
 
             if(i!=index) players.get(i).addPoints(-players.get(i).sumPoints());

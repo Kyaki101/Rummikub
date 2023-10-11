@@ -86,6 +86,15 @@ public class Tablero{
 
 
 
+    public void moverFicha(int posicion1, int i, int posicion2){
+
+        Ficha ficha = tablero[posicion1].getFicha(i);
+        tablero[posicion1].removeFicha(i);
+        tablero[posicion2].addFicha(ficha);
+
+
+    }
+
 
 
 
