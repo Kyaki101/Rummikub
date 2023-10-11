@@ -7,6 +7,7 @@ import javax.swing.*;
 public class Game extends JFrame{
 
     private Tablero tablero;
+
     private List<Player> players = new ArrayList<>();
 
     private Almacen almacen;
@@ -16,6 +17,9 @@ public class Game extends JFrame{
     private int size, x, y, z, a, b, c;
 
     String ins;
+
+
+
 
 
 
@@ -72,9 +76,9 @@ public class Game extends JFrame{
 
 
 
+    //esta funcion retorna una lista de los jugadores con sus respectivos puntajes, para que archive los guarde
 
-
-    public boolean Turn(){
+    public List<Player> Turn(){
 
         Player jug = new Player(players.get(turn));
         Tablero tab = new Tablero();
@@ -87,7 +91,8 @@ public class Game extends JFrame{
         while(true) {
 
 
-
+            System.out.println("Tablero:");
+            tablero.imprimirTablero();
             System.out.println("Fichas en la mano de " + players.get(turn).getName() + ":");
             System.out.println(players.get(turn));
             System.out.print("Desea jugar o comer? (j/c): ");
@@ -99,17 +104,33 @@ public class Game extends JFrame{
 
                 while (true) {
 
+
                     play();
                     if (tablero.verify()) {
 
                         if (players.get(turn).Gano()) {
+
                             System.out.println("El jugador " + players.get(turn).getName() + " ha ganado");
-                            return true;
+                            players.get(turn).setWinner();
+                            this.addPointsW();
+                            return players;
+                        }
+
+                        if(almacen.getCola().isEmpty()){
+
+                            System.out.println("El juego ha terminado");
+                            this.addPointsE();
+                            return players;
+
                         }
                         this.nextTurn();
-                        this.Turn();
+                        return this.Turn();
+
+
 
                     } else {
+
+                        //probar caso de tablero duplicado
 
                         System.out.println("Jugada inválida");
                         tablero.imprimirTablero();
@@ -118,19 +139,14 @@ public class Game extends JFrame{
                         almacen.copy(alm);
 
                     }
-
                 }
-
-
             }
-
         }
     }
 
 
 
 
-    //falta probar el cambiar ficha
 
 
 
@@ -142,8 +158,8 @@ public class Game extends JFrame{
         while(true)
         {
 
-
-            System.out.println(players.get(turn).getName() + " desea añadir, insertar o cambiar una ficha, o exit? (a/i/c/e): ");
+            //aqui falta añadir el comer
+            System.out.println(players.get(turn).getName() + " desea añadir, insertar o swapear, comer, mover una ficha, o exit? (a/i/s/c/m/e): ");
             Scanner sc = new Scanner(System.in);
             ins = sc.nextLine();
             if (ins.equals("e")) return;
@@ -159,8 +175,6 @@ public class Game extends JFrame{
                 tablero.añadirFicha(players.get(turn).eliminarFicha(x), y);
 
 
-
-
             } else if (ins.equals("i")) {
 
                 System.out.println("Ingrese el número de ficha de su inventario: ");
@@ -172,9 +186,7 @@ public class Game extends JFrame{
                 tablero.insertarFicha(players.get(turn).eliminarFicha(x), y, z);
 
 
-
-
-            } else if (ins.equals("c")) {
+            } else if (ins.equals("s")) {
 
 
                 System.out.println("Ingrese la coordenada de la casilla de la ficha 1 que desea cambiar: ");
@@ -187,8 +199,23 @@ public class Game extends JFrame{
                 a = sc.nextInt();
                 tablero.cambiarFicha(x, z, y, a);
 
+            }else if(ins.equals("c")) players.get(turn).comer(almacen);
 
-            } else {
+
+            else if(ins.equals("m")){
+
+                System.out.println("Ingrese la coordenada de la casilla de la ficha que desea mover: ");
+                x = sc.nextInt();
+                System.out.println("Ingrese el indice de la ficha que desea mover: ");
+                y = sc.nextInt();
+                System.out.println("Ingrese la coordenada de la casilla a la que desea mover la ficha: ");
+                z = sc.nextInt();
+                tablero.moverFicha(x, y, z);
+
+            }
+
+
+            else {
 
                 System.out.println("Jugada inválida");
                 continue;
@@ -198,6 +225,49 @@ public class Game extends JFrame{
         }
 
     }
+
+
+    //falta el primer turno, suma de 30
+
+
+    public void addPointsW(){
+
+        int j = 0;
+        int sum = 0;
+        for(int i = 0; i<players.size(); i++){
+
+            if(players.get(i).getWinner()) j = i;
+            sum += players.get(turn).sumPoints();
+            players.get(turn).addPoints(-players.get(turn).sumPoints());
+
+        }players.get(j).addPoints(sum);
+
+    }
+
+
+    public void addPointsE(){
+
+        int max = -1, index = 0;
+        for(int i = 0; i<players.size(); i++){
+
+            if(players.get(i).sumPoints()>max) {
+                max = players.get(i).sumPoints();
+                index = i;
+            }
+
+        }
+
+        System.out.println("El jugador " + players.get(index).getName() + " ha ganado");
+        for(int i = 0; i<players.size(); i++){
+
+            if(i!=index) players.get(i).addPoints(-players.get(i).sumPoints());
+
+        }
+
+    }
+
+
+
 
 
 }

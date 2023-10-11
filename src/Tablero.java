@@ -6,10 +6,10 @@ import javax.swing.*;
 public class Tablero extends JPanel{
 
 
-
     public Casilla[] tablero = new Casilla[100];
 
     ImageIcon background = new ImageIcon("res/images/tablero.png");
+
 
 
     public Tablero(){
@@ -94,6 +94,15 @@ public class Tablero extends JPanel{
 
 
 
+    public void moverFicha(int posicion1, int i, int posicion2){
+
+        Ficha ficha = tablero[posicion1].getFicha(i);
+        tablero[posicion1].removeFicha(i);
+        tablero[posicion2].addFicha(ficha);
+
+
+    }
+
 
 
 
@@ -105,6 +114,15 @@ public class Tablero extends JPanel{
 
         }
     }
+
+
+
+
+
+
+
+
+    
 
 
     public Casilla[] getTablero() {

@@ -17,11 +17,20 @@ public class Casilla {
     }
 
 
+
+
+
+
+
+
+
+
+
     private boolean verifyGroup(){
 
         int i = 0;
         while(GroupNSerie.get(i).getJoker()) i++;
-        while(i<GroupNSerie.size()-2){
+        while(i<GroupNSerie.size()-1){
 
             if(GroupNSerie.get(i+1).getJoker()) GroupNSerie.get(i+1).setNumero(GroupNSerie.get(i).getNumero());
             if(GroupNSerie.get(i).getNumero() != GroupNSerie.get(i+1).getNumero()) return false;
@@ -33,11 +42,18 @@ public class Casilla {
 
 
 
+
+
+
+
+
+
+
     private boolean verifySerie(){
 
         int i = 0;
         while(GroupNSerie.get(i).getJoker()) i++;
-        while(i<GroupNSerie.size()-2){
+        while(i<GroupNSerie.size()-1){
 
             if(GroupNSerie.get(i+1).getJoker()){
                 GroupNSerie.get(i+1).setNumero(GroupNSerie.get(i).getNumero()+1);
@@ -50,6 +66,11 @@ public class Casilla {
 
         }return true;
     }
+
+
+
+
+
 
 
 
@@ -93,6 +114,9 @@ public class Casilla {
 
 
 
+
+
+
     public String toString(){
         return GroupNSerie.toString();
     }
@@ -103,8 +127,13 @@ public class Casilla {
 
 
 
+
+
+
+
     public void copy(Casilla c){
 
+        GroupNSerie = new ArrayList<>();
         for(int i = 0; i < c.getCasilla().size(); i++){
             GroupNSerie.add(new Ficha(c.getCasilla().get(i)));
         }

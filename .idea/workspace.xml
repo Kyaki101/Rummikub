@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83426df5-8294-4cf9-8611-de2a1aaeb2e6" name="Changes" comment="Delete src/Player.class">
-      <change afterPath="$PROJECT_DIR$/res/images/background_img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/images/tablero.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Background.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tablero.java" afterDir="false" />
     </list>
@@ -135,6 +130,10 @@
       <workItem from="1696811228883" duration="6669000" />
       <workItem from="1696876763879" duration="4169000" />
       <workItem from="1696889611849" duration="5887000" />
+      <workItem from="1696895535464" duration="421000" />
+      <workItem from="1696903515890" duration="3153000" />
+      <workItem from="1696910603194" duration="2633000" />
+      <workItem from="1696951010438" duration="882000" />
     </task>
     <task id="LOCAL-00001" summary="tablero">
       <option name="closed" value="true" />
@@ -176,7 +175,23 @@
       <option name="project" value="LOCAL" />
       <updated>1696543327277</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Creación de la lógica básica de Rummikub">
+      <option name="closed" value="true" />
+      <created>1696895630213</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696895630213</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Creación de la lógica básica de Rummikub">
+      <option name="closed" value="true" />
+      <created>1696895746633</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696895746633</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +213,8 @@
     <MESSAGE value="tablero" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/Ficha.java&#10;#&#9;src/Main.java&#10;#&#9;src/Tablero.java" />
     <MESSAGE value="Delete src/Player.class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete src/Player.class" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/main'" />
+    <MESSAGE value="Creación de la lógica básica de Rummikub" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creación de la lógica básica de Rummikub" />
   </component>
 </project>
