@@ -78,7 +78,7 @@ public class Game extends JFrame{
 
     //esta funcion retorna una lista de los jugadores con sus respectivos puntajes, para que archive los guarde
 
-    public List<Player> Turn(){
+    public List<Player> Turn(boolean firstTurn){
 
         Player jug = new Player(players.get(turn));
         Tablero tab = new Tablero();
@@ -105,8 +105,17 @@ public class Game extends JFrame{
                 while (true) {
 
 
+                    if(almacen.getCola().isEmpty()){
+
+                        System.out.println("El juego ha terminado");
+                        this.addPointsE();
+                        return players;
+
+                    }
                     play();
-                    if (tablero.verify()) {
+
+                    if (tablero.verify() && tablero.cantFichas() > tab.cantFichas() && (!firstTurn || tablero.sumTablero()-tab.sumTablero() >= 30)) {
+
 
                         if (players.get(turn).Gano()) {
 
@@ -116,21 +125,15 @@ public class Game extends JFrame{
                             return players;
                         }
 
-                        if(almacen.getCola().isEmpty()){
 
-                            System.out.println("El juego ha terminado");
-                            this.addPointsE();
-                            return players;
-
-                        }
                         this.nextTurn();
-                        return this.Turn();
+                        if(firstTurn && turn == 0) return this.Turn(false);
+                        return this.Turn(firstTurn);
 
 
 
                     } else {
 
-                        //probar caso de tablero duplicado
 
                         System.out.println("Jugada inválida");
                         tablero.imprimirTablero();
@@ -153,12 +156,25 @@ public class Game extends JFrame{
 
 
 
+
+
+
+
+
+
+
+
+
+
     public void play(){
 
         while(true)
         {
 
-            //aqui falta añadir el comer
+            System.out.println("Tablero:");
+            tablero.imprimirTablero();
+            System.out.println("Fichas en la mano de " + players.get(turn).getName() + ":");
+            System.out.println(players.get(turn));
             System.out.println(players.get(turn).getName() + " desea añadir, insertar o swapear, comer, mover una ficha, o exit? (a/i/s/c/m/e): ");
             Scanner sc = new Scanner(System.in);
             ins = sc.nextLine();
@@ -247,11 +263,11 @@ public class Game extends JFrame{
 
     public void addPointsE(){
 
-        int max = -1, index = 0;
+        int min = 1<<30, index = 0;
         for(int i = 0; i<players.size(); i++){
 
-            if(players.get(i).sumPoints()>max) {
-                max = players.get(i).sumPoints();
+            if(players.get(i).sumPoints()<min) {
+                min = players.get(i).sumPoints();
                 index = i;
             }
 

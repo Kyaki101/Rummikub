@@ -131,4 +131,31 @@ public class Tablero extends JPanel{
 
 
 
+
+    public int sumTablero(){
+
+        int sum = 0;
+        for(int i = 0; i<100; i++){
+
+            sum += tablero[i].sumCasilla();
+
+        }
+        return sum;
+
+    }
+
+
+    public int cantFichas(){
+
+            int sum = 0;
+            for(int i = 0; i<100; i++){
+
+                sum += tablero[i].getCasilla().size();
+
+            }
+            return sum;
+    }
+
+
+
 }

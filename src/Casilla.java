@@ -140,4 +140,19 @@ public class Casilla {
 
     }
 
+
+
+
+
+    public int sumCasilla(){
+
+        int sum = 0;
+        for(int i = 0; i < GroupNSerie.size(); i++){
+
+            if(GroupNSerie.get(i).getJoker()) return -(1<<30);
+            sum += GroupNSerie.get(i).getNumero();
+
+        }return sum;
+
+    }
 }
