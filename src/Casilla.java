@@ -1,19 +1,40 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.lang.Math;
 public class Casilla {
 
-    private List<Ficha> GroupNSerie = new ArrayList<>();
+    private Ficha[] fila = new Ficha[20];
 
     public Casilla(){
-        GroupNSerie = new ArrayList<>();
+
+        for(int i = 0; i<20; i++) fila[i] = new Ficha();
     }
 
-    public List<Ficha> getCasilla(){
-        return GroupNSerie;
+
+    public Casilla(Casilla c){
+
+        for(int i = 0; i < 20; i++) fila[i] = new Ficha(c.getFicha(i));
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public Ficha[] getCasilla(){
+        return fila;
     }
 
     public void setFicha(Ficha ficha, int i){
-        GroupNSerie.set(i, ficha);
+        fila[i] = ficha;
     }
 
 
@@ -26,47 +47,43 @@ public class Casilla {
 
 
 
-    private boolean verifyGroup(){
 
+
+
+
+    private boolean verifySerie(List<Ficha> serie){
+
+        if(serie.size() < 3) return false;
         int i = 0;
-        while(GroupNSerie.get(i).getJoker()) i++;
-        while(i<GroupNSerie.size()-1){
+        while(serie.get(i).getJoker()) i++;
+        while(i<serie.size()-1){
 
-            if(GroupNSerie.get(i+1).getJoker()) GroupNSerie.get(i+1).setNumero(GroupNSerie.get(i).getNumero());
-            if(GroupNSerie.get(i).getNumero() != GroupNSerie.get(i+1).getNumero()) return false;
-            i++;
-
-        }return true;
-    }
-
-
-
-
-
-
-
-
-
-
-
-    private boolean verifySerie(){
-
-        int i = 0;
-        while(GroupNSerie.get(i).getJoker()) i++;
-        while(i<GroupNSerie.size()-1){
-
-            if(GroupNSerie.get(i+1).getJoker()){
-                GroupNSerie.get(i+1).setNumero(GroupNSerie.get(i).getNumero()+1);
-                GroupNSerie.get(i+1).setColor(GroupNSerie.get(i).getColor());
+            if(serie.get(i+1).getJoker()){
+                serie.get(i+1).setNumero(serie.get(i).getNumero()+1);
+                serie.get(i+1).setColor(serie.get(i).getColor());
             }
-            if(GroupNSerie.get(i).getColor() != GroupNSerie.get(i+1).getColor() ||
-                    GroupNSerie.get(i).getNumero() != GroupNSerie.get(i+1).getNumero()-1){
+            if(serie.get(i).getColor() != serie.get(i+1).getColor() ||
+                    serie.get(i).getNumero() != serie.get(i+1).getNumero()-1){
                 return false;
             }i++;
 
         }return true;
     }
 
+    private boolean verifyGroup(List<Ficha> group){
+
+        if(group.size() < 3) return false;
+        int i = 0;
+        while(group.get(i).getJoker()) i++;
+        while(i<group.size()-1){
+
+            if(group.get(i+1).getJoker()) group.get(i+1).setNumero(group.get(i).getNumero());
+            if(group.get(i).getNumero() != group.get(i+1).getNumero()) return false;
+            i++;
+
+        }return true;
+
+    }
 
 
 
@@ -76,13 +93,40 @@ public class Casilla {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+    //esto hay que arreglarlo
     public boolean verify() {
 
-        if(GroupNSerie.isEmpty()) return true;
+        List<Ficha> verifier = new ArrayList<>();
+        int i = 0;
+        while(i<20){
 
-        if (GroupNSerie.size() < 3) return false;
+            if(fila[i].getNumero() != 0){
 
-        return verifySerie() || verifyGroup();
+                while(fila[i].getNumero() != 0 && i<20){
+                    verifier.add(fila[i]);
+                    i++;
+
+                }
+                if(!this.verifySerie(verifier) && !this.verifyGroup(verifier)){
+
+                    return false;
+                }
+                verifier = new ArrayList<>();
+            }
+            i++;
+
+        }return true;
 
     }
 
@@ -95,20 +139,23 @@ public class Casilla {
 
 
 
-    public void addFicha(Ficha ficha, int i){
-        GroupNSerie.add(i, ficha);
+    public boolean addFicha(Ficha ficha, int i){
+
+        if(fila[i].getNumero() != 0)return false;
+
+        fila[i] = ficha;
+        return true;
+
     }
 
-    public void addFicha(Ficha ficha){
-        GroupNSerie.add(ficha);
-    }
+
 
     public void removeFicha(int i){
-        GroupNSerie.remove(i);
+
+        fila[i] = new Ficha();
+
     }
-    public void removeFicha(){
-        GroupNSerie.remove(GroupNSerie.size()-1);
-    }
+
 
 
 
@@ -118,11 +165,11 @@ public class Casilla {
 
 
     public String toString(){
-        return GroupNSerie.toString();
+        return fila.toString();
     }
 
     public Ficha getFicha(int i){
-        return GroupNSerie.get(i);
+        return fila[i];
     }
 
 
@@ -133,11 +180,54 @@ public class Casilla {
 
     public void copy(Casilla c){
 
-        GroupNSerie = new ArrayList<>();
-        for(int i = 0; i < c.getCasilla().size(); i++){
-            GroupNSerie.add(new Ficha(c.getCasilla().get(i)));
-        }
+        fila = new Ficha[20];
+        for(int i = 0; i < 20; i++) fila[i] = new Ficha(c.getFicha(i));
+
 
     }
 
+
+
+
+
+    public int sumCasilla(){
+
+        int sum = 0;
+        for(int i = 0; i<20; i++){
+
+            if(fila[i].getJoker()) return -(1<<30);
+            sum += fila[i].getNumero();
+
+        }return sum;
+
+    }
+
+
+
+
+
+    public void imprimirCasilla() {
+
+
+        for (int i = 0; i < 20; i++) {
+
+            if (fila[i].getNumero() != 0) System.out.print(fila[i].getNumero() + " ");
+            else System.out.print(" # ");
+        }
+        System.out.println();
+
+    }
+
+
+
+
+    public int cantFichas(){
+
+        int sum = 0;
+        for(int i = 0; i<20; i++){
+
+            if(fila[i].getNumero() != 0) sum++;
+
+        }return sum;
+    }
 }

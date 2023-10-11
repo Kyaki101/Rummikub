@@ -7,6 +7,17 @@ public class Ficha {
 
     private boolean isJoker;
 
+
+    public Ficha(){
+
+        this.isJoker = false;
+        this.numero = 0;
+        this.color = Color.WHITE;
+
+    }
+
+
+
     public Ficha(int numero, Color color){
         this.isJoker = false;
         this.numero = numero;
@@ -24,7 +35,7 @@ public class Ficha {
 
     public Ficha(boolean a){
         this.isJoker = a;
-        this.numero = 0;
+        this.numero = 100;
         this.color = Color.WHITE;
     }
 

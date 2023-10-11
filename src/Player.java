@@ -1,6 +1,8 @@
 import java.util.List;
 import java.util.Scanner;
 
+
+
 public class Player {
 
 
@@ -113,10 +115,10 @@ public class Player {
 
 
 
-
+    // aqui hay un error
     public void copy(Player a){
 
-        deck = new Baraja();
+        deck.getFichas().clear();
         name = a.getName();
         for(int i = 0; i<a.getDeck().size(); i++){
             deck.getFichas().add(a.getDeck().get(i));
@@ -153,7 +155,7 @@ public class Player {
         int sum = 0;
         for(int i = 0; i<deck.getFichas().size(); i++){
 
-            if(deck.getFichas().get(i).getJoker()) sum+= 30;
+            if(deck.getFichas().get(i).getJoker()) sum += 30;
             else
                 sum += deck.getFichas().get(i).getNumero();
 
@@ -170,5 +172,16 @@ public class Player {
     public void setWinner(){
         winner = true;
     }
+
+
+
+    public Ficha getFicha(int i){
+        return deck.getFichas().get(i);
+    }
+
+
+
+
+
 
 }

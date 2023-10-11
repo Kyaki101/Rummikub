@@ -6,7 +6,7 @@ import javax.swing.*;
 public class Tablero extends JPanel{
 
 
-    public Casilla[] tablero = new Casilla[100];
+    public Casilla[] tablero = new Casilla[7];
 
     ImageIcon background = new ImageIcon("res/images/tablero.png");
 
@@ -18,21 +18,13 @@ public class Tablero extends JPanel{
         this.setBackground(new Color(155, 155, 153));
         this.setBounds(200, 75, 1000, 600);
         this.add(bg);
-        for(int i = 0; i < 100; i++){
+        for(int i = 0; i < 7; i++){
             tablero[i] = new Casilla();
         }
 
     }
 
 
-    public Tablero(Tablero t){
-
-        for(int i = 0; i < 100; i++){
-
-            if(!t.getTablero()[i].getCasilla().isEmpty()) tablero[i].copy(t.getTablero()[i]);
-
-        }
-    }
 
 
 
@@ -40,18 +32,13 @@ public class Tablero extends JPanel{
 
 
 
-    public void añadirFicha(Ficha ficha, int posicion){
 
-        tablero[posicion].addFicha(ficha);
-
-
-    }
 
 
 
     public boolean verify(){
 
-        for(int i = 0; i<100; i++){
+        for(int i = 0; i<7; i++){
 
             if(!tablero[i].verify()) return false;
 
@@ -59,9 +46,15 @@ public class Tablero extends JPanel{
     }
 
 
-    public void insertarFicha(Ficha ficha, int posicion, int i){
 
-        tablero[posicion].addFicha(ficha, i);
+
+
+
+
+    public boolean insertarFicha(Ficha ficha, int posicion, int i){
+
+        if(tablero[posicion].addFicha(ficha, i)) return true;
+        return false;
 
     }
 
@@ -69,10 +62,10 @@ public class Tablero extends JPanel{
 
     public void copy(Tablero t){
 
-        for(int i = 0; i < 100; i++){
+        tablero = new Casilla[7];
+        for(int i = 0; i < 7; i++){
 
-            if(!t.getTablero()[i].getCasilla().isEmpty()) tablero[i].copy(t.getTablero()[i]);
-            else tablero[i].getCasilla().clear();
+            tablero[i] = new Casilla(t.getCasilla(i));
 
         }
 
@@ -94,14 +87,7 @@ public class Tablero extends JPanel{
 
 
 
-    public void moverFicha(int posicion1, int i, int posicion2){
 
-        Ficha ficha = tablero[posicion1].getFicha(i);
-        tablero[posicion1].removeFicha(i);
-        tablero[posicion2].addFicha(ficha);
-
-
-    }
 
 
 
@@ -109,9 +95,15 @@ public class Tablero extends JPanel{
 
 
     public void imprimirTablero() {
-        for (int i = 0; i < 100; i++) {
-            if(!tablero[i].getCasilla().isEmpty()) System.out.println(tablero[i]);
 
+        for(int i = 0; i<7; i++){
+
+            if(tablero[i].cantFichas() != 0){
+
+                System.out.print(i + ". ");
+                tablero[i].imprimirCasilla();
+
+            }
         }
     }
 
@@ -121,12 +113,41 @@ public class Tablero extends JPanel{
 
 
 
-
+    public Casilla getCasilla(int i) {
+        return tablero[i];
+    }
     
 
 
     public Casilla[] getTablero() {
         return tablero;
+    }
+
+
+
+
+    public int sumTablero(){
+
+        int sum = 0;
+        for(int i = 0; i<7; i++){
+
+            sum += tablero[i].sumCasilla();
+
+        }
+        return sum;
+
+    }
+
+
+    public int cantFichas(){
+
+        int sum = 0;
+        for(int i = 0; i<7; i++){
+
+            sum += tablero[i].cantFichas();
+
+        }
+        return sum;
     }
 
 

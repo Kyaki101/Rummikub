@@ -8,8 +8,8 @@ public class Main {
         //Archive datos = new Archive();
         //Scanner reader = new Scanner(System.in);
 
-        Game g = new Game(2);
-        g.Turn();
+        Game g = new Game(1);
+        g.Turn(true);
 
 
     }
