@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 
 
@@ -25,13 +26,7 @@ public class Player {
 
     }
 
-    public Player(){
 
-        points = 0;
-        name = "";
-        deck = new Baraja();
-
-    }
 
     public Player(Player a){
         points = a.getPoints();
@@ -77,7 +72,9 @@ public class Player {
     }
 
     public boolean Gano() {
+
         return deck.getBaraja().isEmpty();
+
     }
 
 
@@ -114,7 +111,7 @@ public class Player {
     public Ficha eliminarFicha(int i){
 
         Ficha f = deck.getBaraja().get(i);
-        deck.getBaraja().set(i, new Ficha());
+        deck.getBaraja().remove(i);
         return f;
 
     }
@@ -128,12 +125,10 @@ public class Player {
     // aqui hay un error
     public void copy(Player a){
 
-        for(int i = 0; i < 25; i++){
-            deck.getBaraja().set(i, new Ficha());
-        }
+        deck = new Baraja();
         name = a.getName();
         for(int i = 0; i<a.getDeck().size(); i++){
-            deck.getBaraja().set(i, a.getDeck().get(i));
+            deck.getBaraja().add(a.getDeck().get(i));
         }
     }
 
@@ -149,9 +144,6 @@ public class Player {
 
 
 
-    public void setPoints(int i){
-        points = i;
-    }
     public void addPoints(int i){
         points += i;
     }

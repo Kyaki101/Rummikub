@@ -22,10 +22,9 @@ public class Archive {
 
    private void update(String name, int points){
 
-       int aux = data.get(name);
-       if(aux == 0) data.put(name, points);
+       Integer aux = data.get(name);
+       if(aux == null) data.put(name, points);
        else data.put(name, aux+points);
-
    }
 
 
