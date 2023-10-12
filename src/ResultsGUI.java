@@ -1,10 +1,7 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.HashMap;
-import java.util.List;
-import java.util.ArrayList;
+import java.awt.*;
+import java.util.Map;
 
 public class ResultsGUI {
     private JFrame frame;
@@ -16,47 +13,43 @@ public class ResultsGUI {
         this.archive = archive;
         frame = new JFrame("Tabla de Resultados");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new BorderLayout());
+        frame.setPreferredSize(new Dimension(400, 300));
 
         String[] columnas = {"Nombre", "Puntaje"};
         tableModel = new DefaultTableModel(columnas, 0);
         table = new JTable(tableModel);
+        JScrollPane scrollPane = new JScrollPane(table);
+        frame.add(scrollPane, BorderLayout.CENTER);
 
-        JButton agregarButton = new JButton("Actualizar Resultados");
-        agregarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Obtener los datos de Archive y actualizar la tabla
-                HashMap<String, Integer> datos = archive.getData();
-                actualizarTabla(datos);
-            }
+        JButton actualizarButton = new JButton("Actualizar Resultados");
+        actualizarButton.setFont(new Font("Arial", Font.PLAIN, 14));
+        actualizarButton.setBackground(new Color(51, 153, 255));
+        actualizarButton.setForeground(Color.WHITE);
+        actualizarButton.setBorderPainted(false);
+        actualizarButton.setFocusPainted(false);
+        actualizarButton.addActionListener(e -> {
+            Map<String, Integer> datos = archive.getData();
+            actualizarTabla(datos);
         });
+        frame.add(actualizarButton, BorderLayout.SOUTH);
 
-        frame.getContentPane().add(new JScrollPane(table), "Center");
-        frame.getContentPane().add(agregarButton, "South");
         frame.pack();
         frame.setVisible(true);
     }
 
-    private void actualizarTabla(HashMap<String, Integer> datos) {
+    private void actualizarTabla(Map<String, Integer> datos) {
         tableModel.setRowCount(0);
-        for (String nombre : datos.keySet()) {
-            int puntaje = datos.get(nombre);
-            tableModel.addRow(new Object[]{nombre, puntaje});
-        }
+        datos.forEach((nombre, puntaje) -> tableModel.addRow(new Object[]{nombre, puntaje}));
     }
 
     public static void main(String[] args) {
+        try {
+            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+        } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
         Archive archive = new Archive();
-        List<Player> players = new ArrayList<>();
-        // Agrega jugadores a la lista players si es necesario
-        archive.update(players);
-
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new ResultsGUI(archive);
-            }
-        });
+        ResultsGUI resultsGUI = new ResultsGUI(archive);
     }
 }
-

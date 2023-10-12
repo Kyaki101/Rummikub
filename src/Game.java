@@ -27,6 +27,7 @@ public class Game extends JFrame implements ActionListener {
 
 
     public Game(int n){
+
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
         this.setLayout(null);
@@ -120,10 +121,7 @@ public class Game extends JFrame implements ActionListener {
 
             if(a[i] != null) {
 
-                System.out.println(a[i]);
-
                 a[i].setBounds(i * 50, 750, 50, 70);
-
                 this.add(a[i]);
                 a[i].addActionListener(this);
 
@@ -134,8 +132,6 @@ public class Game extends JFrame implements ActionListener {
 
 
         while(true) {
-
-
 
 
             System.out.println("Tablero:");
