@@ -5,9 +5,12 @@ public class Casilla {
 
     private Ficha[] fila = new Ficha[20];
 
-    public Casilla(){
+    public Casilla(int y){
 
-        for(int i = 0; i<20; i++) fila[i] = new Ficha();
+        for(int i = 0; i<20; i++) {
+            fila[i] = new Ficha();
+            fila[i].setBounds(i * 70, y, 60, 80);
+        }
     }
 
 

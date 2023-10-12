@@ -1,10 +1,13 @@
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import javax.swing.*;
 
-public class Game extends JFrame{
+public class Game extends JFrame implements ActionListener {
 
     private Tablero tablero;
 
@@ -28,10 +31,6 @@ public class Game extends JFrame{
         this.setResizable(false);
         this.setLayout(null);
         this.setSize(1400, 1080);
-        this.add(new Background());
-        this.setVisible(true);
-        this.add(new Tablero());
-        this.setVisible(true);
 
         size = n;
         almacen = new Almacen();
@@ -44,7 +43,7 @@ public class Game extends JFrame{
     }
 
 
-
+    private Ficha buffer;
 
 
 
@@ -66,11 +65,33 @@ public class Game extends JFrame{
 
 
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        for(int i = 0; i < 7; i ++){
+            for(int j = 0; j < 20; j ++){
+                Ficha test = tablero.getTablero()[i].getCasilla()[j];
+                if (e.getSource() == test){
+                    if(buffer != null && test.getNumero() == 0){
+                        tablero.getTablero()[i].getCasilla()[j] = buffer;
+                        test.setText("" + buffer.getNumero());
+                        test.setForeground(buffer.getColor());
+                        buffer = null;
+                        System.out.println(test);
+                    }
+                    System.out.println(test);
 
+                }
+            }
+        }
 
+        Ficha[] a = players.get(turn).makeDeck();
+        for(int i = 0; i < 25; i ++){
+            if(e.getSource() == a[i]){
+                buffer = new Ficha(a[i]);
 
-
-
+            }
+        }
+    }
 
 
 
@@ -85,10 +106,36 @@ public class Game extends JFrame{
         tab.copy(tablero);
         Almacen alm = new Almacen(almacen);
 
+        for(int i = 0; i < 7; i ++){
+            for(int j = 0; j < 20; j ++){
+                tablero.getTablero()[i].getCasilla()[j].setBounds(j * 70, i * 100, 60, 80);
+                this.add(tablero.getTablero()[i].getCasilla()[j]);
+                tablero.getTablero()[i].getCasilla()[j].addActionListener(this);
+            }
+        }
 
+        Ficha[] a = players.get(turn).makeDeck();
+
+        for(int i = 0; i < 25; i ++){
+
+            if(a[i] != null) {
+
+                System.out.println(a[i]);
+
+                a[i].setBounds(i * 50, 750, 50, 70);
+
+                this.add(a[i]);
+                a[i].addActionListener(this);
+
+            }
+        }
+
+        this.setVisible(true);
 
 
         while(true) {
+
+
 
 
             System.out.println("Tablero:");
@@ -160,12 +207,6 @@ public class Game extends JFrame{
 
 
 
-
-
-
-
-
-
     public void play(){
 
         while(true)
@@ -179,6 +220,7 @@ public class Game extends JFrame{
             Scanner sc = new Scanner(System.in);
             ins = sc.nextLine();
             if (ins.equals("e")) return;
+
 
 
             else if (ins.equals("i")) {
@@ -262,8 +304,6 @@ public class Game extends JFrame{
         }
 
     }
-
-
 
 
 

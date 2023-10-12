@@ -5,11 +5,11 @@ public class Baraja {
 
     private List<Ficha> fichas = new ArrayList<>();
 
-    public List<Ficha> getFichas() {
+    public List<Ficha> getBaraja() {
         return fichas;
     }
 
-    public void setFichas(List<Ficha> fichas) {
+    public void setBaraja(List<Ficha> fichas) {
         this.fichas = fichas;
     }
 
@@ -19,11 +19,30 @@ public class Baraja {
 
     }
 
+    public void set(int i, Ficha a){
+
+        fichas.set(i, a);
+    }
+
+
+    public Ficha[] makeDeck(){
+
+        Ficha[] bar = new Ficha[25];
+        for(int i = 0; i<25; i++) bar[i] = new Ficha();
+        for(int i = 0; i<fichas.size(); i++){
+
+            bar[i] = fichas.get(i);
+
+        }return bar;
+    }
 
 
     public void add(Ficha ficha){
         fichas.add(ficha);
     }
+
+
+
 
     public Baraja(List<Ficha> cola){
         for(int i = 0; i < 14; i++){

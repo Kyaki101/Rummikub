@@ -1,6 +1,7 @@
 import java.awt.*;
+import javax.swing.*;
 
-public class Ficha {
+public class Ficha extends JButton{
 
     private int numero;
     private Color color;
@@ -22,6 +23,8 @@ public class Ficha {
         this.isJoker = false;
         this.numero = numero;
         this.color = color;
+        this.setForeground(color);
+        this.setText(""+this.getNumero());
     }
 
 
@@ -67,7 +70,8 @@ public class Ficha {
         if(color == Color.RED) return "" + numero + " " + "Rojo" + '\n';
         if(color == Color.BLUE) return "" + numero + " " + "Azul" + '\n';
         if(color == Color.BLACK) return "" + numero + " " + "Negro" + '\n';
-        return "" + numero + " " + "Amarillo" + '\n';
+        if(color == Color.YELLOW) return "" + numero + " " + "Amarillo" + '\n';
+        return "Ficha vacia";
 
     }
 }

@@ -8,18 +8,11 @@ public class Tablero extends JPanel{
 
     public Casilla[] tablero = new Casilla[7];
 
-    ImageIcon background = new ImageIcon("res/images/tablero.png");
-
 
 
     public Tablero(){
-        JLabel bg = new JLabel();
-        bg.setIcon(background);
-        this.setBackground(new Color(155, 155, 153));
-        this.setBounds(200, 75, 1000, 600);
-        this.add(bg);
         for(int i = 0; i < 7; i++){
-            tablero[i] = new Casilla();
+            tablero[i] = new Casilla(i * 90);
         }
 
     }
