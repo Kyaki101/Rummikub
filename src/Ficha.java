@@ -27,6 +27,20 @@ public class Ficha extends JButton{
         this.setText(""+this.getNumero());
     }
 
+    public void clear(){
+        setColor(Color.WHITE);
+        setNumero(0);
+        setForeground(getColor());
+        setText("" + getNumero());
+    }
+
+    public void copy(Ficha ficha){
+        color = ficha.getColor();
+        numero = ficha.getNumero();
+        setText("" + numero);
+        setForeground(color);
+    }
+
 
     public Ficha(Ficha a){
 

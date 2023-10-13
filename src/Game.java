@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import javax.swing.*;
 
 public class Game extends JFrame implements ActionListener {
 
@@ -31,7 +30,7 @@ public class Game extends JFrame implements ActionListener {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
         this.setLayout(null);
-        this.setSize(1400, 1080);
+        this.setSize(1400, 850);
 
         size = n;
         almacen = new Almacen();
@@ -45,6 +44,8 @@ public class Game extends JFrame implements ActionListener {
 
 
     private Ficha buffer;
+
+    private int[] coords = {-1, -1};
 
     private int pos;
 
@@ -65,12 +66,21 @@ public class Game extends JFrame implements ActionListener {
         turn%=size;
         Ficha[] stat = players.get(turn).getStat();
         refDeck(pre, stat);
+        ronda.setText("Es turno del jugador " + turn);
     }
 
     private JButton comer;
     private JButton devolver;
 
+    private JLabel ronda;
+
+    private JButton jugada;
+
     Player safe;
+
+    public void refTablero(){
+
+    }
 
 
     private void refDeck(Ficha[] pre, Ficha[] stat){
@@ -100,17 +110,26 @@ public class Game extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         for(int i = 0; i < 7; i ++){
             for(int j = 0; j < 20; j ++){
-                Ficha test = tablero.getTablero()[i].getCasilla()[j];
-                if (e.getSource() == test){
-                    if(buffer != null && test.getNumero() == 0){
-                        tablero.getTablero()[i].getCasilla()[j] = buffer;
-                        test.setText("" + buffer.getNumero());
-                        test.setForeground(buffer.getColor());
+                Ficha current = tab.getTablero()[i].getCasilla()[j];
+                if (e.getSource() == current){
+                    if(buffer != null && current.getNumero() == 0){
+                        tab.getTablero()[i].getCasilla()[j].copy(buffer);
                         buffer = null;
-                        System.out.println(tablero.getTablero()[i].getCasilla()[j]);
                         this.remove(devolver);
                     }
-                    System.out.println(test);
+                    else if(buffer == null){
+                        buffer = new Ficha(current);
+                        coords[0] = i;
+                        coords[1] = j;
+                        current.clear();
+                    }
+                    else if(buffer != null && coords[0] != -1){
+                        tab.getTablero()[coords[0]].getCasilla()[coords[1]].copy(current);
+                        current.copy(buffer);
+                        buffer = null;
+                        coords[0] = -1;
+                    }
+                    System.out.println(current);
 
                 }
             }
@@ -130,6 +149,7 @@ public class Game extends JFrame implements ActionListener {
                     Ficha[] stat = players.get(turn).getStat();
                     refDeck(pre, stat);
                     this.add(devolver);
+                    devolver.setVisible(true);
                 }
 
 
@@ -152,11 +172,18 @@ public class Game extends JFrame implements ActionListener {
             refDeck(pre, stat);
 
             this.remove(devolver);
+            devolver.setVisible(false);
+        }
+        if(e.getSource() == jugada){
+            if(tab.verify()){
+                nextTurn();
+            }
+
+
         }
     }
 
-
-
+    private Tablero tab;
 
 
     //esta funcion retorna una lista de los jugadores con sus respectivos puntajes, para que archive los guarde
@@ -164,15 +191,15 @@ public class Game extends JFrame implements ActionListener {
     public List<Player> Turn(boolean firstTurn){
 
         Player jug = new Player(players.get(turn));
-        Tablero tab = new Tablero(this);
+        tab = new Tablero(this);
         tab.copy(tablero);
         Almacen alm = new Almacen(almacen);
 
         for(int i = 0; i < 7; i ++){
             for(int j = 0; j < 20; j ++){
-                tablero.getTablero()[i].getCasilla()[j].setBounds(j * 70, i * 100, 60, 80);
-                this.add(tablero.getTablero()[i].getCasilla()[j]);
-                tablero.getTablero()[i].getCasilla()[j].addActionListener(this);
+                tab.getTablero()[i].getCasilla()[j].setBounds(j * 70, (i * 90) + 60, 60, 80);
+                this.add(tab.getTablero()[i].getCasilla()[j]);
+                tab.getTablero()[i].getCasilla()[j].addActionListener(this);
             }
         }
 
@@ -183,11 +210,20 @@ public class Game extends JFrame implements ActionListener {
         this.add(comer);
 
         devolver = new JButton();
-        devolver.setBounds(500, 720, 200, 25);
+        devolver.setBounds(500, 700, 200, 25);
         devolver.setText("Devolver ficha");
         devolver.addActionListener(this);
-        this.add(devolver);
-        this.remove(devolver);
+
+        jugada = new JButton();
+        jugada.setBounds(800, 700, 200, 25);
+        jugada.setText("Hacer jugada");
+        jugada.addActionListener(this);
+        this.add(jugada);
+
+        ronda = new JLabel();
+        ronda.setBounds(600, 30, 200, 30);
+        ronda.setText("Es turno del jugador " + turn);
+        this.add(ronda);
 
         for(int i = 0; i < 25; i ++){
 
