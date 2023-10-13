@@ -10,7 +10,7 @@ public class Tablero extends JPanel{
 
 
 
-    public Tablero(){
+    public Tablero(Game game){
         for(int i = 0; i < 7; i++){
             tablero[i] = new Casilla(i * 90);
         }

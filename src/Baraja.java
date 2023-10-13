@@ -57,6 +57,7 @@ public class Baraja {
             return;
         }
         fichas.add(a.getCola().get(0));
+        fichas.get(fichas.size() - 1).setText(""+fichas.get(fichas.size() - 1).getNumero());
         a.getCola().remove(0);
     }
 

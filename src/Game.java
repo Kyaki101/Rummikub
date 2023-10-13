@@ -35,7 +35,7 @@ public class Game extends JFrame implements ActionListener {
 
         size = n;
         almacen = new Almacen();
-        tablero = new Tablero();
+        tablero = new Tablero(this);
         players = new ArrayList<>();
         for(int i = 0; i<n; i++) players.add(new Player(almacen));
         turn = 0;
@@ -62,9 +62,31 @@ public class Game extends JFrame implements ActionListener {
         turn%=size;
     }
 
+    private JButton comer;
 
 
+    private void refDeck(Ficha[] pre, Ficha[] stat){
+        for(int j = 0; j < 25; j++){
+            Rectangle temp = pre[j].getBounds();
+            removeFicha(pre[j]);
 
+        }
+        for(int i = 0; i < 25; i ++){
+            addFicha(stat[i], i * 50, 750, 50, 70);
+        }
+    }
+
+    public void removeFicha(Ficha ficha){
+        ficha.setBounds(1500, 0, 0, 0);
+        ficha.removeActionListener(this);
+        this.remove(ficha);
+    }
+
+    public void addFicha(Ficha ficha, int x, int y, int width, int height){
+        ficha.setBounds(x, y, width, height);
+        this.add(ficha);
+        ficha.addActionListener(this);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -77,7 +99,7 @@ public class Game extends JFrame implements ActionListener {
                         test.setText("" + buffer.getNumero());
                         test.setForeground(buffer.getColor());
                         buffer = null;
-                        System.out.println(test);
+                        System.out.println(tablero.getTablero()[i].getCasilla()[j]);
                     }
                     System.out.println(test);
 
@@ -85,12 +107,27 @@ public class Game extends JFrame implements ActionListener {
             }
         }
 
-        Ficha[] a = players.get(turn).makeDeck();
         for(int i = 0; i < 25; i ++){
-            if(e.getSource() == a[i]){
-                buffer = new Ficha(a[i]);
+            Ficha[] pre = players.get(turn).getStat();
+            if(e.getSource() == pre[i]){
+                System.out.println(i);
+                buffer = new Ficha(pre[i]);
+                if(players.get(turn).getDeck().size() > i){
+
+                    players.get(turn).eliminarFicha(i);
+                    players.get(turn).makeDeck();
+                    Ficha[] stat = players.get(turn).getStat();
+                    refDeck(pre, stat);
+                }
+
 
             }
+        }
+        if(e.getSource() == comer){
+            Ficha[] pre = players.get(turn).getStat();
+            players.get(turn).comer(almacen);
+            Ficha[] stat = players.get(turn).getStat();
+            refDeck(pre, stat);
         }
     }
 
@@ -103,7 +140,7 @@ public class Game extends JFrame implements ActionListener {
     public List<Player> Turn(boolean firstTurn){
 
         Player jug = new Player(players.get(turn));
-        Tablero tab = new Tablero();
+        Tablero tab = new Tablero(this);
         tab.copy(tablero);
         Almacen alm = new Almacen(almacen);
 
@@ -115,15 +152,17 @@ public class Game extends JFrame implements ActionListener {
             }
         }
 
-        Ficha[] a = players.get(turn).makeDeck();
+        comer = new JButton();
+        comer.setBounds(1270, 730, 100, 100);
+        comer.setText("comer");
+        comer.addActionListener(this);
+        this.add(comer);
 
         for(int i = 0; i < 25; i ++){
 
-            if(a[i] != null) {
+            if(players.get(turn).getStat()[i] != null) {
 
-                a[i].setBounds(i * 50, 750, 50, 70);
-                this.add(a[i]);
-                a[i].addActionListener(this);
+                addFicha(players.get(turn).getStat()[i], i * 50, 750, 50, 70);
 
             }
         }
@@ -155,7 +194,6 @@ public class Game extends JFrame implements ActionListener {
                         return players;
 
                     }
-                    play();
 
                     if (tablero.verify() && tablero.cantFichas() > tab.cantFichas() && (!firstTurn || tablero.sumTablero()-tab.sumTablero() >= 30)) {
 
@@ -203,63 +241,63 @@ public class Game extends JFrame implements ActionListener {
 
 
 
-    public void play(){
-
-        while(true)
-        {
-
-            System.out.println("Tablero:");
-            tablero.imprimirTablero();
-            System.out.println("Fichas en la mano de " + players.get(turn).getName() + ":");
-            System.out.println(players.get(turn));
-            System.out.println(players.get(turn).getName() + " desea insertar, swapear, o comer una ficha, o exit? (i/s/c/e): ");
-            Scanner sc = new Scanner(System.in);
-            ins = sc.nextLine();
-            if (ins.equals("e")) return;
-
-
-
-            else if (ins.equals("i")) {
-
-                System.out.println("Ingrese el número de ficha de su inventario: ");
-                x = sc.nextInt();
-                System.out.println("Ingrese la coordenada de la casilla: ");
-                y = sc.nextInt();
-                System.out.println("Ingrese en que indice desea ingresar la ficha: ");
-                z = sc.nextInt();
-                if(tablero.insertarFicha(players.get(turn).getFicha(x), y, z)){
-
-                    players.get(turn).eliminarFicha(x);
-
-                }
-
-
-            } else if (ins.equals("s")) {
-
-
-                System.out.println("Ingrese la coordenada de la casilla de la ficha 1 que desea cambiar: ");
-                x = sc.nextInt();
-                System.out.println("Ingrese el indice de la ficha 1 que desea cambiar: ");
-                y = sc.nextInt();
-                System.out.println("Ingrese la coordenada de la casilla de la ficha 2 que desea cambiar: ");
-                z = sc.nextInt();
-                System.out.println("Ingrese el indice de la ficha 2 que desea cambiar: ");
-                a = sc.nextInt();
-                tablero.cambiarFicha(x, z, y, a);
-
-            }else if(ins.equals("c")) players.get(turn).comer(almacen);
-
-
-            else {
-
-                System.out.println("Jugada inválida");
-                continue;
-
-            }
-
-        }
-
-    }
+//    public void play(){
+//
+//        while(true)
+//        {
+//
+//            System.out.println("Tablero:");
+//            tablero.imprimirTablero();
+//            System.out.println("Fichas en la mano de " + players.get(turn).getName() + ":");
+//            System.out.println(players.get(turn));
+//            System.out.println(players.get(turn).getName() + " desea insertar, swapear, o comer una ficha, o exit? (i/s/c/e): ");
+//            Scanner sc = new Scanner(System.in);
+//            ins = sc.nextLine();
+//            if (ins.equals("e")) return;
+//
+//
+//
+//            else if (ins.equals("i")) {
+//
+//                System.out.println("Ingrese el número de ficha de su inventario: ");
+//                x = sc.nextInt();
+//                System.out.println("Ingrese la coordenada de la casilla: ");
+//                y = sc.nextInt();
+//                System.out.println("Ingrese en que indice desea ingresar la ficha: ");
+//                z = sc.nextInt();
+//                if(tablero.insertarFicha(players.get(turn).getFicha(x), y, z)){
+//
+//                    players.get(turn).eliminarFicha(x);
+//
+//                }
+//
+//
+//            } else if (ins.equals("s")) {
+//
+//
+//                System.out.println("Ingrese la coordenada de la casilla de la ficha 1 que desea cambiar: ");
+//                x = sc.nextInt();
+//                System.out.println("Ingrese el indice de la ficha 1 que desea cambiar: ");
+//                y = sc.nextInt();
+//                System.out.println("Ingrese la coordenada de la casilla de la ficha 2 que desea cambiar: ");
+//                z = sc.nextInt();
+//                System.out.println("Ingrese el indice de la ficha 2 que desea cambiar: ");
+//                a = sc.nextInt();
+//                tablero.cambiarFicha(x, z, y, a);
+//
+//            }else if(ins.equals("c")) players.get(turn).comer(almacen);
+//
+//
+//            else {
+//
+//                System.out.println("Jugada inválida");
+//                continue;
+//
+//            }
+//
+//        }
+//
+//    }
 
 
     //falta el primer turno, suma de 30

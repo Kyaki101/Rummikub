@@ -5,21 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6a43b76-dc18-4f6a-ba22-05b274cc1efe" name="Changes by daniloduque" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Almacen.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Archive.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Baraja.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Casilla.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ficha.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Player.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tablero.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Archive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Archive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Baraja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Baraja.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ficha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ficha.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ResultsGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResultsGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tablero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,6 +142,7 @@
       <workItem from="1697058624078" duration="2521000" />
       <workItem from="1697065351142" duration="8183000" />
       <workItem from="1697074373248" duration="1772000" />
+      <workItem from="1697130626568" duration="11896000" />
     </task>
     <task id="LOCAL-00001" summary="tablero">
       <option name="closed" value="true" />

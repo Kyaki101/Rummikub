@@ -33,7 +33,14 @@ public class Ficha extends JButton{
         this.isJoker = a.getJoker();
         this.numero = a.getNumero();
         this.color = a.getColor();
+        this.setForeground(color);
+        this.setText("" + numero);
 
+    }
+
+    public void refresh(Game game){
+        this.setText("" + numero);
+        this.setColor(color);
     }
 
     public Ficha(boolean a){

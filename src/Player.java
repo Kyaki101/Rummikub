@@ -12,6 +12,8 @@ public class Player {
     private Baraja deck;
     private String name;
 
+    private Ficha[] stat;
+
 
 
 
@@ -22,6 +24,7 @@ public class Player {
         Scanner sc = new Scanner(System.in);
         name = sc.nextLine();
         deck = new Baraja(a.getCola());
+        makeDeck();
 
 
     }
@@ -44,8 +47,10 @@ public class Player {
 
 
 
-    public Ficha[] makeDeck(){
-        return deck.makeDeck();
+    public void makeDeck(){
+
+        stat =  deck.makeDeck();
+
     }
 
 
@@ -62,13 +67,18 @@ public class Player {
 
 
 
+    public Ficha[] getStat(){
+        return stat;
+    }
 
 
 
 
 
     public void comer(Almacen a) {
+
         deck.Comer(a);
+        makeDeck();
     }
 
     public boolean Gano() {
