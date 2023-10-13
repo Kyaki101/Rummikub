@@ -46,6 +46,8 @@ public class Game extends JFrame implements ActionListener {
 
     private Ficha buffer;
 
+    private int pos;
+
 
 
 
@@ -58,11 +60,17 @@ public class Game extends JFrame implements ActionListener {
 
 
     public void nextTurn(){
+        Ficha[] pre = players.get(turn).getStat();
         turn++;
         turn%=size;
+        Ficha[] stat = players.get(turn).getStat();
+        refDeck(pre, stat);
     }
 
     private JButton comer;
+    private JButton devolver;
+
+    Player safe;
 
 
     private void refDeck(Ficha[] pre, Ficha[] stat){
@@ -100,6 +108,7 @@ public class Game extends JFrame implements ActionListener {
                         test.setForeground(buffer.getColor());
                         buffer = null;
                         System.out.println(tablero.getTablero()[i].getCasilla()[j]);
+                        this.remove(devolver);
                     }
                     System.out.println(test);
 
@@ -109,15 +118,18 @@ public class Game extends JFrame implements ActionListener {
 
         for(int i = 0; i < 25; i ++){
             Ficha[] pre = players.get(turn).getStat();
-            if(e.getSource() == pre[i]){
+            if(e.getSource() == pre[i] && buffer == null){
+                safe = players.get(turn);
                 System.out.println(i);
                 buffer = new Ficha(pre[i]);
+                pos = i;
                 if(players.get(turn).getDeck().size() > i){
 
                     players.get(turn).eliminarFicha(i);
                     players.get(turn).makeDeck();
                     Ficha[] stat = players.get(turn).getStat();
                     refDeck(pre, stat);
+                    this.add(devolver);
                 }
 
 
@@ -128,6 +140,18 @@ public class Game extends JFrame implements ActionListener {
             players.get(turn).comer(almacen);
             Ficha[] stat = players.get(turn).getStat();
             refDeck(pre, stat);
+            nextTurn();
+        }
+
+        if(e.getSource() == devolver){
+            Ficha[] pre = players.get(turn).getStat();
+            players.get(turn).addFicha(pos, buffer);
+            buffer = null;
+            pos = -1;
+            Ficha[] stat = players.get(turn).getStat();
+            refDeck(pre, stat);
+
+            this.remove(devolver);
         }
     }
 
@@ -157,6 +181,13 @@ public class Game extends JFrame implements ActionListener {
         comer.setText("comer");
         comer.addActionListener(this);
         this.add(comer);
+
+        devolver = new JButton();
+        devolver.setBounds(500, 720, 200, 25);
+        devolver.setText("Devolver ficha");
+        devolver.addActionListener(this);
+        this.add(devolver);
+        this.remove(devolver);
 
         for(int i = 0; i < 25; i ++){
 

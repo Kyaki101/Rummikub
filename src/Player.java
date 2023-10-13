@@ -41,6 +41,20 @@ public class Player {
 
     }
 
+    public void refPlayer(Player a){
+        points = a.getPoints();
+        deck = new Baraja();
+        name = a.getName();
+        for(int i = 0; i<a.getDeck().size(); i++){
+            deck.getBaraja().add(a.getFicha(i));
+        }
+    }
+
+    public void addFicha(int index, Ficha ficha){
+        deck.addFicha(index, ficha);
+        makeDeck();
+    }
+
 
 
 

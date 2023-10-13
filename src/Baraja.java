@@ -51,6 +51,11 @@ public class Baraja {
         }
     }
 
+    public void addFicha(int index, Ficha ficha){
+        fichas.add(index, ficha);
+        fichas.get(fichas.size() - 1).setText(""+fichas.get(fichas.size() - 1).getNumero());
+    }
+
     public void Comer(Almacen a){
         if(a.getCola().isEmpty()) {
             System.out.println("No quedan cartas en el almacen");
