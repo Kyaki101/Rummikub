@@ -47,6 +47,7 @@ public class Ficha extends JButton{
         this.isJoker = a.getJoker();
         this.numero = a.getNumero();
         this.color = a.getColor();
+
         this.setForeground(color);
         this.setText("" + numero);
 

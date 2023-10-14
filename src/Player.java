@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.List;
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -12,7 +13,8 @@ public class Player {
     private Baraja deck;
     private String name;
 
-    private Ficha[] stat;
+    private Ficha[] stat = new Ficha[25];
+
 
 
     public Player(){
@@ -21,6 +23,9 @@ public class Player {
         points = 0;
         deck = new Baraja();
         name = "";
+        for(int i = 0; i < 25; i++){
+            stat[i] = new Ficha();
+        }
 
     }
 
@@ -31,6 +36,9 @@ public class Player {
         Scanner sc = new Scanner(System.in);
         name = sc.nextLine();
         deck = new Baraja(a.getCola());
+        for(int i = 0; i < 25; i++){
+            stat[i] = new Ficha();
+        }
         makeDeck();
 
 
@@ -45,6 +53,10 @@ public class Player {
         for(int i = 0; i<a.getDeck().size(); i++){
             deck.getBaraja().add(a.getFicha(i));
         }
+        for(int i = 0; i < 25; i++){
+            stat[i] = new Ficha();
+        }
+        makeDeck();
 
     }
 
@@ -78,9 +90,23 @@ public class Player {
     }
 
 
-    public void makeDeck(){
+    public Ficha[] makeDeck(){
 
-        stat = deck.makeDeck();
+        for(int i = 0; i<25; i++){
+            if(i < deck.getBaraja().size()) {
+                stat[i].setColor(deck.getBaraja().get(i).getColor());
+                stat[i].setNumero(deck.getBaraja().get(i).getNumero());
+                stat[i].setForeground(stat[i].getColor());
+                stat[i].setText("" + stat[i].getNumero());
+            }
+
+            else {
+                stat[i].setColor(Color.WHITE);
+                stat[i].setNumero(0);
+                stat[i].setForeground(stat[i].getColor());
+                stat[i].setText("");
+            }
+        }return stat;
 
     }
 

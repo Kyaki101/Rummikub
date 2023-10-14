@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d6a43b76-dc18-4f6a-ba22-05b274cc1efe" name="Changes by daniloduque" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Almacen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Almacen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Baraja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Baraja.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ficha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ficha.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tablero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +99,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "refDeck",
     "last_opened_file_path": "/Users/emanuelrs101/Desktop/Rummikub",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -170,7 +167,7 @@
       <workItem from="1697180984071" duration="170000" />
       <workItem from="1697214634347" duration="53000" />
       <workItem from="1697214692763" duration="6960000" />
-      <workItem from="1697229719789" duration="14516000" />
+      <workItem from="1697229719789" duration="19476000" />
     </task>
     <task id="LOCAL-00001" summary="tablero">
       <option name="closed" value="true" />

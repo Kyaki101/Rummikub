@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,18 +39,23 @@ public class Baraja {
     public Ficha[] makeDeck(){
 
         for(int i = 0; i<25; i++) bar[i] = new Ficha();
-        for(int i = 0; i<fichas.size(); i++){
+        for(int i = 0; i<25; i++){
 
-            bar[i] = fichas.get(i);
+            if(i >= fichas.size()){
+                bar[i].setColor(Color.WHITE);
+                bar[i].setNumero(0);
+                bar[i].setForeground(bar[i].getColor());
+                bar[i].setText("");
+            }
+            else{
 
+                bar[i].setColor(fichas.get(i).getColor());
+                bar[i].setNumero(fichas.get(i).getNumero());
+                bar[i].setForeground(bar[i].getColor());
+                bar[i].setText("" + bar[i].getNumero());
+            }
 
-        }
-        for(int i = 0; i < 25; i ++){
-            bar[i].setBounds(i * 50, 750, 50, 70);
-            bar[i].setForeground(bar[i].getColor());
-            bar[i].setText("" + bar[i].getNumero());
-        }
-        return bar;
+        }return bar;
 
     }
 

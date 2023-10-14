@@ -46,6 +46,8 @@ public class Game extends JFrame implements ActionListener {
 
     private int pos;
 
+    private Ficha[] stat = new Ficha[25];
+
 
 
 
@@ -66,7 +68,17 @@ public class Game extends JFrame implements ActionListener {
         alm = new Almacen(almacen);
         jug = new Player(players.get(turn));
         firstTurn = true;
+        for(int i = 0; i < 25; i ++){
+            stat[i] = new Ficha();
+        }
+        copyDeck(players.get(turn).getStat());
 
+    }
+
+    public void copyDeck(Ficha[] deck){
+        for(int i = 0; i < 25; i ++){
+            stat[i] = deck[i];
+        }
     }
 
 
@@ -93,7 +105,7 @@ public class Game extends JFrame implements ActionListener {
         tab.copy(tablero);
         alm.copy(almacen);
         Ficha[] stat = players.get(turn).getStat();
-        refDeck(pre, stat);
+        //refDeck(pre, stat);
         ronda.setText("Es turno del jugador " + turn);
 
     }
@@ -145,30 +157,22 @@ public class Game extends JFrame implements ActionListener {
 
 
 
+    private void refDeck(){
 
-
-
-
-
-
-
-
-
-    private void refDeck(Ficha[] pre, Ficha[] stat){
         for(int j = 0; j < 25; j++){
-            Rectangle temp = pre[j].getBounds();
-            removeFicha(pre[j]);
+            removeFicha(stat[j]);
 
         }
         for(int i = 0; i < 25; i ++){
             addFicha(stat[i], i * 50, 750, 50, 70);
         }
+
     }
 
     public void removeFicha(Ficha ficha){
         ficha.setBounds(1500, 0, 0, 0);
-        ficha.removeActionListener(this);
-        this.remove(ficha);
+//        ficha.removeActionListener(this);
+//        this.remove(ficha);
     }
 
     public void addFicha(Ficha ficha, int x, int y, int width, int height){
@@ -219,31 +223,24 @@ public class Game extends JFrame implements ActionListener {
         }
 
         for(int i = 0; i < 25; i ++){
-            Ficha[] pre = players.get(turn).getStat();
-            if(e.getSource() == pre[i] && buffer == null){
-                safe = players.get(turn);
+            copyDeck(players.get(turn).getStat());
+            if(e.getSource() == stat[i] && buffer == null){
                 System.out.println(i);
-                buffer = new Ficha(pre[i]);
+                buffer = new Ficha(stat[i]);
                 pos = i;
-                if(players.get(turn).getDeck().size() > i){
-
+                if(players.get(turn).getDeck().size() >= i){
                     players.get(turn).eliminarFicha(i);
-                    players.get(turn).makeDeck();
-                    Ficha[] stat = players.get(turn).getStat();
-                    refDeck(pre, stat);
-                    this.add(devolver);
-                    devolver.setVisible(true);
+                    copyDeck(players.get(turn).makeDeck());
+                    //refDeck();
                 }
 
 
             }
         }
         if(e.getSource() == comer){
-            Ficha[] pre = players.get(turn).getStat();
             players.get(turn).comer(almacen);
-            Ficha[] stat = players.get(turn).getStat();
-            refDeck(pre, stat);
             nextTurn();
+            stat = players.get(turn).getStat();
         }
 
         if(e.getSource() == devolver){
@@ -252,7 +249,7 @@ public class Game extends JFrame implements ActionListener {
             buffer = null;
             pos = -1;
             Ficha[] stat = players.get(turn).getStat();
-            refDeck(pre, stat);
+            refDeck();
 
             this.remove(devolver);
             devolver.setVisible(false);
@@ -327,9 +324,9 @@ public class Game extends JFrame implements ActionListener {
 
         for(int i = 0; i < 25; i ++){
 
-            if(players.get(turn).getStat()[i] != null) {
+            if(stat[i] != null) {
 
-                addFicha(players.get(turn).getStat()[i], i * 50, 750, 50, 70);
+                addFicha(stat[i], i * 50, 750, 50, 70);
 
             }
         }
