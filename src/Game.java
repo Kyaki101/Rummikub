@@ -169,6 +169,8 @@ public class Game extends JFrame implements ActionListener {
         }
     }
 
+
+
     public void removeFicha(Ficha ficha){
         ficha.setBounds(1500, 0, 0, 0);
         ficha.removeActionListener(this);
@@ -238,7 +240,9 @@ public class Game extends JFrame implements ActionListener {
         }
         if(e.getSource() == comer){
 
+            players.get(turn).setDeck(jug.getDeck());
             players.get(turn).comer(almacen);
+            refTablero();
             nextTurn();
 
         }
@@ -278,6 +282,11 @@ public class Game extends JFrame implements ActionListener {
 
         }
         if(e.getSource() == reiniciarTablero){
+            players.get(turn).setDeck(jug.getDeck());
+            refDeck();
+            copyDeck(players.get(turn).makeDeck());
+
+
             refTablero();
         }
     }
@@ -316,7 +325,7 @@ public class Game extends JFrame implements ActionListener {
 
         ronda = new JLabel();
         ronda.setBounds(600, 30, 200, 30);
-        ronda.setText("Es turno del jugador " + turn);
+        ronda.setText("Es turno de " + players.get(turn).getName());
         this.add(ronda);
 
         reiniciarTablero = new JButton();
