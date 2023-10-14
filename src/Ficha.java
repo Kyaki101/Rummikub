@@ -35,8 +35,8 @@ public class Ficha extends JButton{
     }
 
     public void copy(Ficha ficha){
-        color = ficha.getColor();
-        numero = ficha.getNumero();
+        this.color = ficha.getColor();
+        this.numero = ficha.getNumero();
         setText("" + numero);
         setForeground(color);
     }

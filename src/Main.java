@@ -12,8 +12,7 @@ public class Main {
         //Scanner reader = new Scanner(System.in);
 
         Game g = new Game(2);
-        datos.update(g.Turn(true));
-
+        g.Turn(true);
 
 
     }

@@ -15,7 +15,14 @@ public class Player {
     private Ficha[] stat;
 
 
+    public Player(){
 
+        winner = false;
+        points = 0;
+        deck = new Baraja();
+        name = "";
+
+    }
 
     public Player(Almacen a) {
 
@@ -57,32 +64,53 @@ public class Player {
 
 
 
+    public void setDeck(List<Ficha> aux){
+
+        deck.setBaraja(aux);
+
+    }
 
 
+
+
+    public Baraja getBaraja(){
+        return deck;
+    }
 
 
     public void makeDeck(){
 
-        stat =  deck.makeDeck();
+        stat = deck.makeDeck();
 
     }
 
 
     public List<Ficha> getDeck() {
+
         return deck.getBaraja();
+
     }
 
 
 
 
+    public void copy(Player a){
 
+        winner = a.getWinner();
+        points = a.getPoints();
+        deck.copy(a.getBaraja());
+        name = a.getName();
+
+    }
 
 
 
 
 
     public Ficha[] getStat(){
+
         return stat;
+
     }
 
 
@@ -146,15 +174,7 @@ public class Player {
 
 
 
-    // aqui hay un error
-    public void copy(Player a){
 
-        deck = new Baraja();
-        name = a.getName();
-        for(int i = 0; i<a.getDeck().size(); i++){
-            deck.getBaraja().add(a.getDeck().get(i));
-        }
-    }
 
 
 
@@ -169,6 +189,7 @@ public class Player {
 
 
     public void addPoints(int i){
+
         points += i;
     }
 

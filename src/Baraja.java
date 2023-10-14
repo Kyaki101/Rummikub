@@ -5,13 +5,22 @@ public class Baraja {
 
     private List<Ficha> fichas = new ArrayList<>();
 
+    private Ficha[] bar = new Ficha[25];
+
+
+
+
+
+
+
+
+
+
+
     public List<Ficha> getBaraja() {
         return fichas;
     }
 
-    public void setBaraja(List<Ficha> fichas) {
-        this.fichas = fichas;
-    }
 
     public Baraja(){
 
@@ -25,20 +34,65 @@ public class Baraja {
     }
 
 
+    //hice en un cambio aqui
     public Ficha[] makeDeck(){
 
-        Ficha[] bar = new Ficha[25];
         for(int i = 0; i<25; i++) bar[i] = new Ficha();
         for(int i = 0; i<fichas.size(); i++){
 
             bar[i] = fichas.get(i);
 
-        }return bar;
+
+        }
+        for(int i = 0; i < 25; i ++){
+            bar[i].setBounds(i * 50, 750, 50, 70);
+            bar[i].setForeground(bar[i].getColor());
+            bar[i].setText("" + bar[i].getNumero());
+        }
+        return bar;
+
     }
+
+
+
+
 
 
     public void add(Ficha ficha){
         fichas.add(ficha);
+    }
+
+
+    public int getSize(){
+
+        return fichas.size();
+
+    }
+
+
+    public void setBaraja(List<Ficha> aux){
+
+        fichas = new ArrayList<>(aux);
+
+    }
+    public Ficha get(int i){
+
+        return fichas.get(i);
+
+    }
+
+
+
+
+
+
+
+
+    public void copy(Baraja newB){
+
+        fichas = new ArrayList<>();
+        for(int i = 0; i<newB.getSize(); i++) fichas.add(new Ficha(newB.get(i)));
+
     }
 
 
@@ -50,6 +104,19 @@ public class Baraja {
             cola.remove(0);
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public void addFicha(int index, Ficha ficha){
         fichas.add(index, ficha);
@@ -74,4 +141,8 @@ public class Baraja {
         }
         return s;
     }
+
+
+
+
 }

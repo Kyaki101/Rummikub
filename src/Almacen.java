@@ -20,9 +20,11 @@ public class Almacen {
 
 
     public Almacen(Almacen a){
+
         for(int i = 0; i < a.getCola().size(); i++){
-            cola.add(a.getCola().get(i));
+            cola.add(new Ficha(a.getCola().get(i)));
         }
+
     }
 
 

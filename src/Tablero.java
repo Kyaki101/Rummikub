@@ -10,7 +10,7 @@ public class Tablero extends JPanel{
 
 
 
-    public Tablero(Game game){
+    public Tablero(){
         for(int i = 0; i < 7; i++){
             tablero[i] = new Casilla(i * 90);
         }
@@ -29,13 +29,15 @@ public class Tablero extends JPanel{
 
 
 
-    public boolean verify(){
+    public boolean verify(boolean firstTurn, Tablero aux){
 
         for(int i = 0; i<7; i++){
 
             if(!tablero[i].verify()) return false;
 
-        }return true;
+        }if(this.cantFichas() <= aux.cantFichas()) return false;
+        if(firstTurn && this.sumTablero()-aux.sumTablero() < 30) return false;
+        return true;
     }
 
 
