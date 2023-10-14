@@ -51,6 +51,7 @@ public class Game extends JFrame implements ActionListener {
 
 
 
+
     public Game(int n){
 
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -96,11 +97,14 @@ public class Game extends JFrame implements ActionListener {
 
 
 
-    public void nextTurn(){
+    public void nextTurn(boolean comio){
 
 
         turn++;
         turn%=size;
+        if(turn == 0 && !comio){
+            firstTurn = false;
+        }
         jug.copy(players.get(turn));
         tab.copy(tablero);
         alm.copy(almacen);
@@ -178,9 +182,18 @@ public class Game extends JFrame implements ActionListener {
     }
 
     public void addFicha(Ficha ficha, int x, int y, int width, int height){
-        ficha.setBounds(x, y, width, height);
-        this.add(ficha);
-        ficha.addActionListener(this);
+        if(ficha.getJoker()){
+            ficha.setBounds(x, y, width, height);
+            ficha.setText("♨");
+            ficha.setForeground(Color.RED);
+            this.add(ficha);
+            ficha.addActionListener(this);
+        }
+        else {
+            ficha.setBounds(x, y, width, height);
+            this.add(ficha);
+            ficha.addActionListener(this);
+        }
     }
 
 
@@ -226,6 +239,9 @@ public class Game extends JFrame implements ActionListener {
 
         for(int i = 0; i < 25; i ++){
             if(e.getSource() == stat[i] && buffer == null){
+                if(stat[i].getJoker()){
+                    System.out.println("es Joker");
+                }
                 System.out.println(i);
                 buffer = new Ficha(stat[i]);
                 pos = i;
@@ -243,7 +259,7 @@ public class Game extends JFrame implements ActionListener {
             players.get(turn).setDeck(jug.getDeck());
             players.get(turn).comer(almacen);
             refTablero();
-            nextTurn();
+            nextTurn(true);
 
         }
 
@@ -275,13 +291,14 @@ public class Game extends JFrame implements ActionListener {
                     addPointsE();
 
                 }else{
-                    nextTurn();
+                    nextTurn(false);
                 }
             }
 
 
         }
         if(e.getSource() == reiniciarTablero){
+            buffer = null;
             players.get(turn).setDeck(jug.getDeck());
             refDeck();
             copyDeck(players.get(turn).makeDeck());

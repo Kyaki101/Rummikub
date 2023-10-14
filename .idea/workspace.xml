@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d6a43b76-dc18-4f6a-ba22-05b274cc1efe" name="Changes by daniloduque" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ficha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ficha.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +169,7 @@
       <workItem from="1697262299753" duration="124000" />
       <workItem from="1697262452462" duration="87000" />
       <workItem from="1697303040747" duration="720000" />
-      <workItem from="1697307478036" duration="1168000" />
+      <workItem from="1697307478036" duration="2319000" />
     </task>
     <task id="LOCAL-00001" summary="tablero">
       <option name="closed" value="true" />
