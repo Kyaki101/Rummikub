@@ -231,7 +231,9 @@ public class Player {
         for(int i = 0; i<deck.getBaraja().size(); i++){
 
             if(deck.getBaraja().get(i).getJoker()) sum += 30;
+
             else
+
                 sum += deck.getBaraja().get(i).getNumero();
 
         }return sum;

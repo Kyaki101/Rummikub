@@ -33,7 +33,6 @@ public class ResultsGUI {
             actualizarTabla(datos);
         });
         frame.add(actualizarButton, BorderLayout.SOUTH);
-
         frame.pack();
         frame.setVisible(true);
     }
@@ -43,13 +42,5 @@ public class ResultsGUI {
         datos.forEach((nombre, puntaje) -> tableModel.addRow(new Object[]{nombre, puntaje}));
     }
 
-    public static void main(String[] args) {
-        try {
-            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
-        } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        Archive archive = new Archive();
-        ResultsGUI resultsGUI = new ResultsGUI(archive);
-    }
+
 }

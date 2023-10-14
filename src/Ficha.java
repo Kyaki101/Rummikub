@@ -47,9 +47,10 @@ public class Ficha extends JButton{
         this.isJoker = a.getJoker();
         this.numero = a.getNumero();
         this.color = a.getColor();
-
         this.setForeground(color);
-        this.setText("" + numero);
+        if(isJoker) this.setText("♨");
+        else this.setText("" + numero);
+
 
     }
 
@@ -61,7 +62,9 @@ public class Ficha extends JButton{
     public Ficha(boolean a){
         this.isJoker = a;
         this.numero = 100;
-        this.color = Color.WHITE;
+        this.color = Color.RED;
+        this.setText("♨");
+        this.setForeground(Color.RED);
     }
 
     public boolean getJoker(){

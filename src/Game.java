@@ -18,9 +18,7 @@ public class Game extends JFrame implements ActionListener {
 
     private boolean firstTurn;
 
-    private int size, x, y, z, a, b, c;
-
-    private String ins;
+    private int size;
 
     private Player jug;
 
@@ -51,6 +49,7 @@ public class Game extends JFrame implements ActionListener {
 
 
 
+
     public Game(int n){
 
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -63,7 +62,6 @@ public class Game extends JFrame implements ActionListener {
         players = new ArrayList<>();
         for(int i = 0; i<n; i++) players.add(new Player(almacen));
         turn = 0;
-        ins = "";
         tab = new Tablero();
         alm = new Almacen(almacen);
         jug = new Player(players.get(turn));
@@ -96,11 +94,13 @@ public class Game extends JFrame implements ActionListener {
 
 
 
-    public void nextTurn(){
-
+    public void nextTurn(boolean comio){
 
         turn++;
         turn%=size;
+        if(turn == 0 && !comio){
+            firstTurn = false;
+        }
         jug.copy(players.get(turn));
         tab.copy(tablero);
         alm.copy(almacen);
@@ -178,9 +178,13 @@ public class Game extends JFrame implements ActionListener {
     }
 
     public void addFicha(Ficha ficha, int x, int y, int width, int height){
+
+
         ficha.setBounds(x, y, width, height);
         this.add(ficha);
         ficha.addActionListener(this);
+
+
     }
 
 
@@ -226,6 +230,9 @@ public class Game extends JFrame implements ActionListener {
 
         for(int i = 0; i < 25; i ++){
             if(e.getSource() == stat[i] && buffer == null){
+                if(stat[i].getJoker()){
+                    System.out.println("es Joker");
+                }
                 System.out.println(i);
                 buffer = new Ficha(stat[i]);
                 pos = i;
@@ -240,10 +247,16 @@ public class Game extends JFrame implements ActionListener {
         }
         if(e.getSource() == comer){
 
+            if(almacen.getCola().isEmpty()){
+
+                addPointsE();
+                setVisible(false);
+
+            }
             players.get(turn).setDeck(jug.getDeck());
             players.get(turn).comer(almacen);
             refTablero();
-            nextTurn();
+            nextTurn(true);
 
         }
 
@@ -254,7 +267,6 @@ public class Game extends JFrame implements ActionListener {
             pos = -1;
             Ficha[] stat = players.get(turn).getStat();
             refDeck();
-
             this.remove(devolver);
             devolver.setVisible(false);
         }
@@ -267,26 +279,28 @@ public class Game extends JFrame implements ActionListener {
 
                     //aqui falta salirse de la funcion
                     addPointsW();
+                    //setVisible(false);
                 }
 
                 else if(almacen.getCola().isEmpty()){
 
                     //aqui falta salirse de la funcion
                     addPointsE();
+                    //setVisible(false);
 
                 }else{
-                    nextTurn();
+
+                    nextTurn(false);
                 }
             }
 
 
         }
         if(e.getSource() == reiniciarTablero){
+            buffer = null;
             players.get(turn).setDeck(jug.getDeck());
             refDeck();
             copyDeck(players.get(turn).makeDeck());
-
-
             refTablero();
         }
     }
@@ -342,8 +356,6 @@ public class Game extends JFrame implements ActionListener {
 
             }
         }
-
-
         this.setVisible(true);
 
     }
@@ -384,6 +396,14 @@ public class Game extends JFrame implements ActionListener {
         }
 
     }
+
+
+    public List<Player> getPlayers(){
+        return players;
+    }
+
+
+
 
 
 
