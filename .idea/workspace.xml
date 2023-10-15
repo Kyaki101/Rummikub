@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6a43b76-dc18-4f6a-ba22-05b274cc1efe" name="Changes by daniloduque" comment="Changes by daniloduque">
+      <change afterPath="$PROJECT_DIR$/res/images/copyright.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ficha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ficha.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ResultsGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResultsGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +73,8 @@
     <setting file="file://$PROJECT_DIR$/src/Casilla.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/Ficha.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/Game.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/Main.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/MainMenu.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/Player.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/Tablero.java" root0="SKIP_INSPECTION" />
   </component>
