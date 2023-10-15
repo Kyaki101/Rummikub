@@ -4,6 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="d6a43b76-dc18-4f6a-ba22-05b274cc1efe" name="Changes by daniloduque" comment="Changes by daniloduque">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Almacen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Archive.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Baraja.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Casilla.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ficha.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ResultsGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tablero.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +48,6 @@
     </favorite-branches>
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="kyaki &lt;emanuelrs101@gmail.com&gt;" />
         <option value="Danilo &lt;105374584+daniloduque@users.noreply.github.com&gt;" />
       </list>
     </option>
@@ -47,11 +60,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
+    &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
     &quot;assignee&quot;: &quot;Kyaki101&quot;
-  }
-}</component>
+    }
+    }</component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
   </component>
@@ -64,12 +77,13 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="jar:///Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/lib/src.zip!/java.base/jdk/internal/misc/Unsafe.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Baraja.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/Casilla.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/Ficha.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/Game.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/Main.java" root0="SKIP_INSPECTION" />
-
+    <setting file="file://$PROJECT_DIR$/src/MainMenu.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/Player.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/Tablero.java" root0="SKIP_INSPECTION" />
   </component>
@@ -77,8 +91,8 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 8
-}</component>
+    &quot;associatedIndex&quot;: 8
+    }</component>
   <component name="ProjectId" id="2V88rNy1xIYmDJa8VrKdNLzJS8R" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -88,7 +102,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
+    &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -104,8 +118,8 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
+    }
+    }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/res/images" />
@@ -169,13 +183,7 @@
       <workItem from="1697303040747" duration="720000" />
       <workItem from="1697307478036" duration="2319000" />
       <workItem from="1697331938064" duration="37000" />
-      <workItem from="1697331985289" duration="4049000" />
-      <workItem from="1697341021145" duration="2721000" />
-      <workItem from="1697391091364" duration="73000" />
-      <workItem from="1697391591825" duration="2228000" />
-      <workItem from="1697393834845" duration="10000" />
-      <workItem from="1697393915111" duration="79000" />
-      <workItem from="1697396635488" duration="711000" />
+      <workItem from="1697331985289" duration="3795000" />
     </task>
     <task id="LOCAL-00001" summary="tablero">
       <option name="closed" value="true" />
@@ -233,39 +241,7 @@
       <option name="project" value="LOCAL" />
       <updated>1696895746633</updated>
     </task>
-    <task id="LOCAL-00008" summary="Se avanzó en el bug del joker, y además se solucionó un bug en el método comer">
-      <option name="closed" value="true" />
-      <created>1697336358020</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1697336358020</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Se avanzó en el bug del joker, y además se solucionó un bug en el método comer">
-      <option name="closed" value="true" />
-      <created>1697336488369</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1697336488369</updated>
-    </task>
-    <task id="LOCAL-00010" summary="se arreglo el joker">
-      <option name="closed" value="true" />
-      <created>1697396662869</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1697396662869</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Se arreglo el Joker">
-      <option name="closed" value="true" />
-      <created>1697396706639</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1697396706639</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,12 +265,6 @@
     <MESSAGE value="Delete src/Player.class" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'" />
     <MESSAGE value="Creación de la lógica básica de Rummikub" />
-    <MESSAGE value="latest" />
-    <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/Ficha.java&#10;#&#9;src/Game.java" />
-    <MESSAGE value="Se avanzó en el bug del joker, y además se solucionó un bug en el método comer" />
-    <MESSAGE value="se arreglo el joker" />
-    <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/Ficha.class&#10;#&#9;src/Player.class" />
-    <MESSAGE value="Se arreglo el Joker" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se arreglo el Joker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creación de la lógica básica de Rummikub" />
   </component>
 </project>
