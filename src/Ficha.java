@@ -14,6 +14,8 @@ public class Ficha extends JButton{
         this.isJoker = false;
         this.numero = 0;
         this.color = Color.WHITE;
+        this.setForeground(color);
+        this.setText("");
 
     }
 
@@ -28,17 +30,22 @@ public class Ficha extends JButton{
     }
 
     public void clear(){
-        setColor(Color.WHITE);
-        setNumero(0);
-        setForeground(getColor());
-        setText("" + getNumero());
+
+        this.isJoker = false;
+        this.numero = 0;
+        this.color = Color.WHITE;
+        this.setForeground(color);
+        this.setText("");
+
     }
 
     public void copy(Ficha ficha){
         this.color = ficha.getColor();
         this.numero = ficha.getNumero();
-        setText("" + numero);
-        setForeground(color);
+        this.isJoker = ficha.getJoker();
+        if(isJoker) this.setText("☻");
+        else this.setText("" + numero);
+        this.setForeground(color);
     }
 
 
@@ -47,23 +54,32 @@ public class Ficha extends JButton{
         this.isJoker = a.getJoker();
         this.numero = a.getNumero();
         this.color = a.getColor();
-        this.setForeground(color);
-        if(isJoker) this.setText("♨");
+        if(isJoker) this.setText("☻");
         else this.setText("" + numero);
+        this.setForeground(color);
+
 
 
     }
 
     public void refresh(Game game){
-        this.setText("" + numero);
-        this.setColor(color);
+
+        if (this.getJoker()){
+            this.setText("☻");
+            this.setForeground(Color.BLACK);
+        }
+        else{
+
+            this.setText("" + this.getNumero());
+            this.setForeground(this.getColor());
+        }
     }
 
     public Ficha(boolean a){
         this.isJoker = a;
         this.numero = 100;
-        this.color = Color.RED;
-        this.setText("♨");
+        this.color = Color.BLACK;
+        this.setText("☻");
         this.setForeground(Color.RED);
     }
 
@@ -72,6 +88,9 @@ public class Ficha extends JButton{
     }
 
 
+    public void setJoker(boolean a){
+        this.isJoker = a;
+    }
 
     public int getNumero() {
         return numero;
