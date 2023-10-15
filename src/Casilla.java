@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.lang.Math;
@@ -73,18 +74,33 @@ public class Casilla {
         }return true;
     }
 
+
+    private boolean search(List<Color> vis, Color color){
+
+        for(int i = 0; i<vis.size(); i++){
+
+            if(vis.get(i).equals(color)) return true;
+
+        }return false;
+
+    }
+
     private boolean verifyGroup(List<Ficha> group){
 
         if(group.size() < 3) return false;
+        List<Color> vis = new ArrayList<>();
         int i = 0;
         while(group.get(i).getJoker()) i++;
         while(i<group.size()-1){
 
             if(group.get(i+1).getJoker()) group.get(i+1).setNumero(group.get(i).getNumero());
-            if(group.get(i).getNumero() != group.get(i+1).getNumero()) return false;
+            if(group.get(i).getNumero() != group.get(i+1).getNumero() || search(vis, group.get(i).getColor())) return false;
+            if(!group.get(i).getJoker()) vis.add(group.get(i).getColor());
             i++;
 
-        }return true;
+        }
+        if(search(vis, group.get(group.size()-1).getColor())) return false;
+        return true;
 
     }
 

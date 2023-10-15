@@ -78,9 +78,9 @@ public class Ficha extends JButton{
     public Ficha(boolean a){
         this.isJoker = a;
         this.numero = 100;
-        this.color = Color.BLACK;
+        this.color = Color.DARK_GRAY;
         this.setText("☻");
-        this.setForeground(Color.RED);
+        this.setForeground(Color.DARK_GRAY);
     }
 
     public boolean getJoker(){

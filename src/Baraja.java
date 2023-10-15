@@ -6,7 +6,7 @@ public class Baraja {
 
     private List<Ficha> fichas = new ArrayList<>();
 
-    private Ficha[] bar = new Ficha[25];
+    private Ficha[] bar = new Ficha[50];
 
 
 

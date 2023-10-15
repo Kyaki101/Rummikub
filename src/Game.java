@@ -44,7 +44,7 @@ public class Game extends JFrame implements ActionListener {
 
     private int pos;
 
-    private Ficha[] stat = new Ficha[25];
+    private Ficha[] stat = new Ficha[50];
 
 
 
@@ -66,7 +66,7 @@ public class Game extends JFrame implements ActionListener {
         alm = new Almacen(almacen);
         jug = new Player(players.get(turn));
         firstTurn = true;
-        for(int i = 0; i < 25; i ++){
+        for(int i = 0; i < 50; i ++){
             stat[i] = new Ficha();
         }
         copyDeck(players.get(turn).getStat());
@@ -76,7 +76,11 @@ public class Game extends JFrame implements ActionListener {
     public void copyDeck(Ficha[] deck){
         for(int i = 0; i < 25; i ++){
             stat[i] = deck[i];
-            this.addFicha(stat[i], i * 50, 750, 50, 70);
+            this.addFicha(stat[i], i * 40 + 200, 700, 40, 50);
+        }
+        for(int i = 25; i < 50; i ++){
+            stat[i] = deck[i];
+            this.addFicha(stat[i], (i - 25) * 40 + 200, 750, 40, 50);
         }
     }
 
@@ -164,7 +168,7 @@ public class Game extends JFrame implements ActionListener {
     }
 
     public void removeBar(){
-        for(int i = 0; i < 25; i ++){
+        for(int i = 0; i < 50; i ++){
             removeFicha(stat[i]);
         }
     }
@@ -208,7 +212,6 @@ public class Game extends JFrame implements ActionListener {
                     if(buffer != null && current.getNumero() == 0){
                         tablero.getTablero()[i].getCasilla()[j].copy(buffer);
                         buffer = null;
-                        this.remove(devolver);
                     }
                     else if(buffer == null){
                         buffer = new Ficha(current);
@@ -228,7 +231,7 @@ public class Game extends JFrame implements ActionListener {
             }
         }
 
-        for(int i = 0; i < 25; i ++){
+        for(int i = 0; i < 50; i ++){
             if(e.getSource() == stat[i] && buffer == null){
                 if(stat[i].getJoker()){
                     System.out.println("es Joker");
@@ -260,7 +263,7 @@ public class Game extends JFrame implements ActionListener {
 
         }
 
-        if(e.getSource() == devolver){
+        /*if(e.getSource() == devolver){
             Ficha[] pre = players.get(turn).getStat();
             players.get(turn).addFicha(pos, buffer);
             buffer = null;
@@ -269,7 +272,7 @@ public class Game extends JFrame implements ActionListener {
             refDeck();
             this.remove(devolver);
             devolver.setVisible(false);
-        }
+        }*/
 
 
         if(e.getSource() == jugada){
@@ -321,29 +324,36 @@ public class Game extends JFrame implements ActionListener {
         }
 
         comer = new JButton();
-        comer.setBounds(1270, 730, 100, 100);
+        comer.setBounds(1270, 700, 100, 100);
         comer.setText("comer");
         comer.addActionListener(this);
         this.add(comer);
 
-        devolver = new JButton();
-        devolver.setBounds(500, 700, 200, 25);
+        /*devolver = new JButton();
+        devolver.setBounds(500, 700, 200, 50);
         devolver.setText("Devolver ficha");
-        devolver.addActionListener(this);
+        devolver.addActionListener(this);*/
 
         jugada = new JButton();
-        jugada.setBounds(800, 700, 200, 25);
+        jugada.setBounds(900, 25, 200, 30);
         jugada.setText("Hacer jugada");
         jugada.addActionListener(this);
         this.add(jugada);
 
         ronda = new JLabel();
-        ronda.setBounds(600, 30, 200, 30);
+        ronda.setBounds(678, 25, 200, 30);
         ronda.setText("Es turno de " + players.get(turn).getName());
         this.add(ronda);
 
+        JLabel Mazo = new JLabel();
+        Mazo.setBounds(700, 677, 200, 30);
+        Mazo.setText("Mazo: ");
+        Mazo.setVisible(true);
+        this.add(Mazo);
+
+
         reiniciarTablero = new JButton();
-        reiniciarTablero.setBounds(100, 700, 200, 25);
+        reiniciarTablero.setBounds(370, 25, 200, 30);
         reiniciarTablero.setText("Reinciar Tablero");
         reiniciarTablero.addActionListener(this);
         this.add(reiniciarTablero);
@@ -352,7 +362,14 @@ public class Game extends JFrame implements ActionListener {
 
             if (stat[i] != null) {
 
-                addFicha(stat[i], i * 50, 750, 50, 70);
+                addFicha(stat[i], i * 40 + 200, 700, 40, 50);
+
+            }
+        }
+        for(int i = 25; i < 50; i ++){
+            if (stat[i] != null) {
+
+                addFicha(stat[i], (i - 25) * 40 + 200, 750, 40, 50);
 
             }
         }

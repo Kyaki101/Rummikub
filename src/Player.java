@@ -18,7 +18,7 @@ public class Player extends JFrame implements ActionListener {
 
     private String texto = "";
 
-    private Ficha[] stat = new Ficha[25];
+    private Ficha[] stat = new Ficha[50];
 
     private JButton conf = new JButton();
 
@@ -32,7 +32,7 @@ public class Player extends JFrame implements ActionListener {
         points = 0;
         deck = new Baraja();
         name = "";
-        for(int i = 0; i < 25; i++){
+        for(int i = 0; i < 50; i++){
             stat[i] = new Ficha();
         }
 
@@ -63,7 +63,7 @@ public class Player extends JFrame implements ActionListener {
 //            System.out.println(texto);
         }
         deck = new Baraja(a.getCola());
-        for(int i = 0; i < 25; i++){
+        for(int i = 0; i < 50; i++){
             stat[i] = new Ficha();
         }
         makeDeck();
@@ -80,7 +80,7 @@ public class Player extends JFrame implements ActionListener {
         for(int i = 0; i<a.getDeck().size(); i++){
             deck.getBaraja().add(a.getFicha(i));
         }
-        for(int i = 0; i < 25; i++){
+        for(int i = 0; i < 50; i++){
             stat[i] = new Ficha();
         }
         makeDeck();
@@ -119,7 +119,7 @@ public class Player extends JFrame implements ActionListener {
 
     public Ficha[] makeDeck(){
 
-        for(int i = 0; i<25; i++){
+        for(int i = 0; i<50; i++){
 
             if(i < deck.getBaraja().size()) {
 
