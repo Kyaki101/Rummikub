@@ -39,6 +39,12 @@ public class Player extends JFrame implements ActionListener {
     }
 
     public Player(Almacen a) {
+        JLabel logo = new JLabel();
+        ImageIcon img = new ImageIcon("res/images/player.png");
+        logo.setBounds(400, 20, 600, 600);
+        logo.setIcon(img);
+        logo.setVisible(true);
+        this.add(logo);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
         this.setLayout(null);
@@ -52,9 +58,9 @@ public class Player extends JFrame implements ActionListener {
         this.add(conf);
         this.setVisible(true);
         points = 0;
-        while(!name.equals("")){
+        while(name.equals("")){
             name = texto;
-            System.out.println(texto);
+//            System.out.println(texto);
         }
         deck = new Baraja(a.getCola());
         for(int i = 0; i < 25; i++){
