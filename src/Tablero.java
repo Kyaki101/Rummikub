@@ -129,6 +129,7 @@ public class Tablero extends JPanel{
             sum += tablero[i].sumCasilla();
 
         }
+        System.out.println(sum);
         return sum;
 
     }

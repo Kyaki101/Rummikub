@@ -8,12 +8,20 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Archive datos = new Archive();
-        ResultsGUI r = new ResultsGUI(datos);
+        int pCount = 0;
 
-        Game g = new Game(2);
+        //Archive datos = new Archive();
+        //ResultsGUI r = new ResultsGUI(datos);
+        MainMenu m = new MainMenu();
+
+        while (pCount == 0){
+            pCount = m.getFin();
+            System.out.println(m.getFin());
+        }
+
+
+        Game g = new Game(pCount);
         g.Turn(true);
-        //g.dispose();
 
 
 

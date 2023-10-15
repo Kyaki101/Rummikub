@@ -4,22 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6a43b76-dc18-4f6a-ba22-05b274cc1efe" name="Changes by daniloduque" comment="Se avanzó en el bug del joker, y además se solucionó un bug en el método comer">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Almacen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Archive.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Baraja.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Casilla.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ficha.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ficha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ficha.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.class" beforeDir="false" />
+    <list default="true" id="d6a43b76-dc18-4f6a-ba22-05b274cc1efe" name="Changes by daniloduque" comment="Se arreglo el Joker">
+      <change beforePath="$PROJECT_DIR$/src/Casilla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Casilla.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ResultsGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tablero.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tablero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,11 +68,11 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="jar:///Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/lib/src.zip!/java.base/jdk/internal/misc/Unsafe.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Baraja.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/Casilla.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/Ficha.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/Game.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/Main.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/Player.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/Tablero.java" root0="SKIP_INSPECTION" />
   </component>
@@ -190,6 +178,7 @@
       <workItem from="1697391591825" duration="2228000" />
       <workItem from="1697393834845" duration="10000" />
       <workItem from="1697393915111" duration="79000" />
+      <workItem from="1697396635488" duration="711000" />
     </task>
     <task id="LOCAL-00001" summary="tablero">
       <option name="closed" value="true" />
@@ -263,7 +252,23 @@
       <option name="project" value="LOCAL" />
       <updated>1697336488369</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="se arreglo el joker">
+      <option name="closed" value="true" />
+      <created>1697396662869</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1697396662869</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Se arreglo el Joker">
+      <option name="closed" value="true" />
+      <created>1697396706639</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1697396706639</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,6 +295,9 @@
     <MESSAGE value="latest" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/Ficha.java&#10;#&#9;src/Game.java" />
     <MESSAGE value="Se avanzó en el bug del joker, y además se solucionó un bug en el método comer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se avanzó en el bug del joker, y además se solucionó un bug en el método comer" />
+    <MESSAGE value="se arreglo el joker" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/Ficha.class&#10;#&#9;src/Player.class" />
+    <MESSAGE value="Se arreglo el Joker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se arreglo el Joker" />
   </component>
 </project>
