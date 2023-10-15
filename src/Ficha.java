@@ -63,7 +63,7 @@ public class Ficha extends JButton{
         this.isJoker = a;
         this.numero = 100;
         this.color = Color.RED;
-        this.setText("+");
+        this.setText("♨");
         this.setForeground(Color.RED);
     }
 
