@@ -8,6 +8,8 @@ import java.util.Scanner;
 
 public class Game extends JFrame implements ActionListener {
 
+    private boolean isOpen;
+    private Archive datos;
     private Tablero tablero;
 
     private List<Player> players = new ArrayList<>();
@@ -50,8 +52,9 @@ public class Game extends JFrame implements ActionListener {
 
 
 
-    public Game(int n){
+    public Game(int n, Archive datos){
 
+        this.datos = datos;
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
         this.setLayout(null);
@@ -65,6 +68,7 @@ public class Game extends JFrame implements ActionListener {
         tab = new Tablero();
         alm = new Almacen(almacen);
         jug = new Player(players.get(turn));
+        isOpen = true;
         firstTurn = true;
         for(int i = 0; i < 50; i ++){
             stat[i] = new Ficha();
@@ -253,6 +257,9 @@ public class Game extends JFrame implements ActionListener {
             if(almacen.getCola().isEmpty()){
 
                 addPointsE();
+                datos.update(players);
+                isOpen = false;
+                dispose();
                 //setVisible(false);
 
             }
@@ -282,6 +289,9 @@ public class Game extends JFrame implements ActionListener {
 
                     //aqui falta salirse de la funcion
                     addPointsW();
+                    datos.update(players);
+                    isOpen = false;
+                    dispose();
                     //setVisible(false);
                 }
 
@@ -289,6 +299,9 @@ public class Game extends JFrame implements ActionListener {
 
                     //aqui falta salirse de la funcion
                     addPointsE();
+                    datos.update(players);
+                    isOpen = false;
+                    dispose();
                     //setVisible(false);
 
                 }else{
@@ -421,6 +434,9 @@ public class Game extends JFrame implements ActionListener {
 
 
 
+    public boolean getOpen(){
+        return isOpen;
+    }
 
 
 

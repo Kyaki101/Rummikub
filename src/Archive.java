@@ -17,14 +17,12 @@ public class Archive {
 
 
 
-
-
-
    private void update(String name, int points){
 
        Integer aux = data.get(name);
        if(aux == null) data.put(name, points);
        else data.put(name, aux+points);
+
    }
 
 
@@ -36,7 +34,6 @@ public class Archive {
          }
 
    }
-
 
    public HashMap<String, Integer> getData(){
        return data;
