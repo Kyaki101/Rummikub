@@ -250,7 +250,7 @@ public class Game extends JFrame implements ActionListener {
             if(almacen.getCola().isEmpty()){
 
                 addPointsE();
-                setVisible(false);
+                //setVisible(false);
 
             }
             players.get(turn).setDeck(jug.getDeck());

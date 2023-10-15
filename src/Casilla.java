@@ -108,7 +108,7 @@ public class Casilla {
 
 
     //esto hay que arreglarlo
-    public boolean verify() {
+    public boolean verify(){
 
         List<Ficha> verifier = new ArrayList<>();
         int i = 0;

@@ -114,11 +114,16 @@ public class Player extends JFrame implements ActionListener {
     public Ficha[] makeDeck(){
 
         for(int i = 0; i<25; i++){
+
             if(i < deck.getBaraja().size()) {
+
+                stat[i].setJoker(deck.getBaraja().get(i).getJoker());
                 stat[i].setColor(deck.getBaraja().get(i).getColor());
                 stat[i].setNumero(deck.getBaraja().get(i).getNumero());
                 stat[i].setForeground(stat[i].getColor());
-                stat[i].setText("" + stat[i].getNumero());
+                if (stat[i].getJoker()) stat[i].setText("☻");
+                else stat[i].setText("" + stat[i].getNumero());
+
             }
 
             else {
