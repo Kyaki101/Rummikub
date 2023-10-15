@@ -4,10 +4,6 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6a43b76-dc18-4f6a-ba22-05b274cc1efe" name="Changes by daniloduque" comment="Se arreglo el Joker">
-      <change beforePath="$PROJECT_DIR$/src/Casilla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Casilla.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tablero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +69,7 @@
     <setting file="file://$PROJECT_DIR$/src/Ficha.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/Game.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/Main.java" root0="SKIP_INSPECTION" />
+
     <setting file="file://$PROJECT_DIR$/src/Player.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/Tablero.java" root0="SKIP_INSPECTION" />
   </component>

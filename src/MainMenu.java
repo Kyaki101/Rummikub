@@ -8,19 +8,27 @@ public class MainMenu extends JFrame implements ActionListener {
         this.setResizable(false);
         this.setLayout(null);
         this.setSize(1400, 850);
-        playerCount.setBounds(600, 700, 200, 50);
+        playerCount.setBounds(400, 700, 400, 50);
         playerCount.setText("Escriba la cantidad de jugadores que desea añadir Maximo (4) ");
         this.add(playerCount);
         validate.setText("Continuar");
-        validate.setBounds(820, 700, 50, 50);
+        validate.setBounds(820, 700, 100, 50);
         validate.addActionListener(this);
         this.add(validate);
+        logo.setIcon(image);
+        logo.setBounds(200, 100, 1000, 229);
+        this.add(logo);
+        this.setVisible(true);
 
 
     }
 
     private JTextField playerCount = new JTextField();
     private JButton validate = new JButton();
+
+    ImageIcon image = new ImageIcon("res/images/copyright.png");
+
+    private JLabel logo =  new JLabel();
 
     private String pre;
 
@@ -38,12 +46,13 @@ public class MainMenu extends JFrame implements ActionListener {
             if (texto == ""){
                 JOptionPane.showMessageDialog(null, "No se ha escrito nada");
             }
-            if(texto != "1" && texto !="2" && texto != "3" && texto != "4"){
-                JOptionPane.showMessageDialog(null, "El numero no es valido");
-            }
-            else{
+            if(texto.equals("1") || texto.equals("2") || texto.equals("3") || texto.equals("4")){
                 fin = Integer.parseInt(texto);
                 this.dispose();
+            }
+            else{
+                System.out.println(texto + "huh?");
+                JOptionPane.showMessageDialog(null, "El numero no es valido");
             }
         }
     }
