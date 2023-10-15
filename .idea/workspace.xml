@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6a43b76-dc18-4f6a-ba22-05b274cc1efe" name="Changes by daniloduque" comment="Changes by daniloduque">
-      <change afterPath="$PROJECT_DIR$/res/images/copyright.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Almacen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Archive.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Baraja.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Casilla.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ficha.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ResultsGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tablero.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

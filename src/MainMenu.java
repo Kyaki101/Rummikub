@@ -15,10 +15,10 @@ public class MainMenu extends JFrame implements ActionListener {
         validate.setBounds(820, 700, 100, 50);
         validate.addActionListener(this);
         this.add(validate);
-        this.setVisible(true);
         logo.setIcon(image);
         logo.setBounds(200, 100, 1000, 229);
         this.add(logo);
+        this.setVisible(true);
 
 
     }

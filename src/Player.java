@@ -1,19 +1,28 @@
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 import java.util.Scanner;
 import java.util.ArrayList;
 
 
 
-public class Player {
+public class Player extends JFrame implements ActionListener {
 
 
     private boolean winner;
     private int points;
     private Baraja deck;
-    private String name;
+    private String name = "";
+
+    private String texto = "";
 
     private Ficha[] stat = new Ficha[25];
+
+    private JButton conf = new JButton();
+
+    JTextField nom = new JTextField();
 
 
 
@@ -30,11 +39,23 @@ public class Player {
     }
 
     public Player(Almacen a) {
-
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setResizable(false);
+        this.setLayout(null);
+        this.setSize(1400, 850);
+        nom.setText("Nombre de jugador");
+        nom.setBounds(400, 700, 400, 50);
+        this.add(nom);
+        conf.addActionListener(this);
+        conf.setText("Confirmar");
+        conf.setBounds(820, 700, 100, 50);
+        this.add(conf);
+        this.setVisible(true);
         points = 0;
-        System.out.println("Ingrese el nombre del jugador: ");
-        Scanner sc = new Scanner(System.in);
-        name = sc.nextLine();
+        while(!name.equals("")){
+            name = texto;
+            System.out.println(texto);
+        }
         deck = new Baraja(a.getCola());
         for(int i = 0; i < 25; i++){
             stat[i] = new Ficha();
@@ -257,8 +278,11 @@ public class Player {
     }
 
 
-
-
-
-
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == conf){
+            texto = nom.getText();
+            this.dispose();
+        }
+    }
 }
