@@ -62,11 +62,11 @@ public class Ficha extends JButton{
         if(isJoker) this.setText("☻");
         else this.setText("" + numero);
         this.setForeground(color);
-        this.setFont(font); 
+        this.setFont(font);
 
     }
 
-    private Font font = new Font("Arial", Font.PLAIN, 10);
+    private Font font = new Font("Roboto", Font.BOLD, 10);
 
     public void refresh(Game game){
 

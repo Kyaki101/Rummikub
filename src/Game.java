@@ -63,10 +63,12 @@ public class Game extends JFrame implements ActionListener {
     public void copyDeck(Ficha[] deck){
         for(int i = 0; i < 25; i ++){
             stat[i] = deck[i];
+            stat[i].setBackground(Color.pink);
             this.addFicha(stat[i], i * 50 + 25, 700, 50, 65);
         }
         for(int i = 25; i < 50; i ++){
             stat[i] = deck[i];
+            stat[i].setBackground(Color.pink);
             this.addFicha(stat[i], (i - 25) * 50 + 25, 765, 50, 65);
         }
     }
@@ -272,6 +274,7 @@ public class Game extends JFrame implements ActionListener {
                 if(players.get(turn).getDeck().isEmpty()){
 
                     //aqui falta salirse de la funcion
+                    players.get(turn).setWinner();
                     addPointsW();
                     datos.update(players);
                     isOpen = false;
@@ -395,6 +398,10 @@ public class Game extends JFrame implements ActionListener {
         }players.get(j).addPoints(sum);
 
     }
+
+
+
+    
 
 
     public void addPointsE(){
