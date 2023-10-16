@@ -193,6 +193,7 @@ public class Player extends JFrame implements ActionListener {
 
     public boolean Gano() {
 
+        //return deck.getSize() > 14;
         return deck.getBaraja().isEmpty();
 
     }

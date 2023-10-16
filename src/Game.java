@@ -238,6 +238,12 @@ public class Game extends JFrame implements ActionListener {
         }
         if(e.getSource() == comer){
 
+            //Esto ahora lo tengo que quitar
+            addPointsE();
+            datos.update(players);
+            isOpen = false;
+            dispose();
+
             if(almacen.getCola().isEmpty()){
 
                 addPointsE();
@@ -256,22 +262,13 @@ public class Game extends JFrame implements ActionListener {
 
         }
 
-        /*if(e.getSource() == devolver){
-            Ficha[] pre = players.get(turn).getStat();
-            players.get(turn).addFicha(pos, buffer);
-            buffer = null;
-            pos = -1;
-            Ficha[] stat = players.get(turn).getStat();
-            refDeck();
-            this.remove(devolver);
-            devolver.setVisible(false);
-        }*/
+
 
 
         if(e.getSource() == jugada){
             if(tablero.verify(players.get(turn).getFirstTurn(), tab)){
 
-                if(players.get(turn).getDeck().isEmpty()){
+                if(players.get(turn).Gano()){
 
                     //aqui falta salirse de la funcion
                     players.get(turn).setWinner();
@@ -279,9 +276,8 @@ public class Game extends JFrame implements ActionListener {
                     datos.update(players);
                     isOpen = false;
                     dispose();
-                    //setVisible(false);
-                }
 
+                }
                 else if(almacen.getCola().isEmpty()){
 
                     //aqui falta salirse de la funcion
@@ -289,7 +285,6 @@ public class Game extends JFrame implements ActionListener {
                     datos.update(players);
                     isOpen = false;
                     dispose();
-                    //setVisible(false);
 
                 }else{
 

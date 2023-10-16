@@ -36,10 +36,28 @@ public class Archive {
    }
 
    public HashMap<String, Integer> getData(){
-       return data;
+        return data;
    }
 
 
+
+   public String getWinner(){
+
+       String winner = null;
+       int maxPoints = Integer.MIN_VALUE;
+
+       for (HashMap.Entry<String, Integer> entry : data.entrySet()) {
+           String key = entry.getKey();
+           Integer value = entry.getValue();
+
+           if (value > maxPoints) {
+               maxPoints = value;
+               winner = key;
+           }
+       }
+       return winner;
+
+   }
 
 
 
