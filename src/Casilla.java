@@ -123,7 +123,6 @@ public class Casilla {
 
 
 
-    //esto hay que arreglarlo
     public boolean verify(){
 
         List<Ficha> verifier = new ArrayList<>();
@@ -161,7 +160,6 @@ public class Casilla {
     public boolean addFicha(Ficha ficha, int i){
 
         if(fila[i].getNumero() != 0)return false;
-
         fila[i] = ficha;
         return true;
 
@@ -225,17 +223,7 @@ public class Casilla {
 
 
 
-    public void imprimirCasilla() {
 
-
-        for (int i = 0; i < 20; i++) {
-
-            if (fila[i].getNumero() != 0) System.out.print(fila[i].getNumero() + " ");
-            else System.out.print(" # ");
-        }
-        System.out.println();
-
-    }
 
 
 
@@ -245,7 +233,8 @@ public class Casilla {
         int sum = 0;
         for(int i = 0; i<20; i++){
 
-            if(fila[i].getNumero() != 0) sum++;
+            //aqui cambie el or
+            if(fila[i].getNumero() != 0 || fila[i].getJoker()) sum++;
 
         }return sum;
     }

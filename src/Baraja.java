@@ -35,7 +35,6 @@ public class Baraja {
     }
 
 
-    //hice en un cambio aqui
     public Ficha[] makeDeck(){
 
         for(int i = 0; i<25; i++) bar[i] = new Ficha();
@@ -130,23 +129,15 @@ public class Baraja {
     }
 
     public void Comer(Almacen a){
-        if(a.getCola().isEmpty()) {
-            System.out.println("No quedan cartas en el almacen");
-            return;
-        }
+
+        if(a.getCola().isEmpty()) return;
         fichas.add(a.getCola().get(0));
         fichas.get(fichas.size() - 1).setText(""+fichas.get(fichas.size() - 1).getNumero());
         a.getCola().remove(0);
     }
 
 
-    public String toString(){
-        String s = "";
-        for(int i = 0; i < fichas.size(); i++){
-            s += fichas.get(i).toString();
-        }
-        return s;
-    }
+
 
 
 

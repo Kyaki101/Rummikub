@@ -12,10 +12,9 @@ public class Main {
 
 
     public static void main(String[] args) throws InterruptedException {
+        Archive datos = new Archive();
         while(!end) {
             int pCount = 0;
-            Archive datos = new Archive();
-            //ResultsGUI r = new ResultsGUI(datos);
             MainMenu m = new MainMenu();
 
             while (pCount == 0) {
@@ -23,7 +22,6 @@ public class Main {
                 pCount = m.getFin();
                 System.out.println(m.getFin());
             }
-
 
             Game g = new Game(pCount, datos);
             g.Turn();
@@ -34,9 +32,9 @@ public class Main {
 
             end = res.getEnd();
 
-
-            //System.out.println(datos.getData());
         }
+        String winner = datos.getWinner();
+        new endScreen(winner);
 
 
 

@@ -213,7 +213,6 @@ public class Game extends JFrame implements ActionListener {
                         buffer = null;
                         coords[0] = -1;
                     }
-                    System.out.println(current);
 
                 }
             }
@@ -221,16 +220,12 @@ public class Game extends JFrame implements ActionListener {
 
         for(int i = 0; i < 50; i ++){
             if(e.getSource() == stat[i] && buffer == null){
-                if(stat[i].getJoker()){
-                    System.out.println("es Joker");
-                }
-                System.out.println(i);
+
                 buffer = new Ficha(stat[i]);
                 pos = i;
                 if(players.get(turn).getDeck().size() >= i){
                     players.get(turn).eliminarFicha(i);
                     copyDeck(players.get(turn).makeDeck());
-                    //refDeck();
                 }
 
 
@@ -238,11 +233,6 @@ public class Game extends JFrame implements ActionListener {
         }
         if(e.getSource() == comer){
 
-            //Esto ahora lo tengo que quitar
-            addPointsE();
-            datos.update(players);
-            isOpen = false;
-            dispose();
 
             if(almacen.getCola().isEmpty()){
 
@@ -250,7 +240,6 @@ public class Game extends JFrame implements ActionListener {
                 datos.update(players);
                 isOpen = false;
                 dispose();
-                //setVisible(false);
 
             }
             players.get(turn).setDeck(jug.getDeck());
@@ -270,7 +259,6 @@ public class Game extends JFrame implements ActionListener {
 
                 if(players.get(turn).Gano()){
 
-                    //aqui falta salirse de la funcion
                     players.get(turn).setWinner();
                     addPointsW();
                     datos.update(players);
@@ -280,7 +268,6 @@ public class Game extends JFrame implements ActionListener {
                 }
                 else if(almacen.getCola().isEmpty()){
 
-                    //aqui falta salirse de la funcion
                     addPointsE();
                     datos.update(players);
                     isOpen = false;
@@ -326,10 +313,6 @@ public class Game extends JFrame implements ActionListener {
         comer.addActionListener(this);
         this.add(comer);
 
-        /*devolver = new JButton();
-        devolver.setBounds(500, 700, 200, 50);
-        devolver.setText("Devolver ficha");
-        devolver.addActionListener(this);*/
 
         jugada = new JButton();
         jugada.setBounds(900, 25, 200, 30);

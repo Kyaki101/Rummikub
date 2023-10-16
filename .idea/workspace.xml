@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6a43b76-dc18-4f6a-ba22-05b274cc1efe" name="Changes by daniloduque" comment="Changes by daniloduque">
-      <change afterPath="$PROJECT_DIR$/src/ResultGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/images/congrats.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/images/ricardo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/endScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Archive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Archive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Almacen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Almacen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Baraja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Baraja.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Casilla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Casilla.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ResultsGUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tablero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +85,7 @@
     <setting file="file://$PROJECT_DIR$/src/Player.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/ResultGUI.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/Tablero.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/endScreen.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -182,7 +187,7 @@
       <workItem from="1697403404544" duration="7206000" />
       <workItem from="1697470435341" duration="942000" />
       <workItem from="1697475500297" duration="5073000" />
-      <workItem from="1697489428073" duration="4640000" />
+      <workItem from="1697489428073" duration="8372000" />
     </task>
     <task id="LOCAL-00001" summary="tablero">
       <option name="closed" value="true" />

@@ -31,7 +31,6 @@ public class Tablero extends JPanel{
 
     public boolean verify(boolean firstTurn, Tablero aux){
 
-        //aqui hay que arreglar el error de que a veces en el primer turno no es obligatorio que la suma de 30 sea correcta
 
         for(int i = 0; i<7; i++){
 
@@ -91,18 +90,7 @@ public class Tablero extends JPanel{
 
 
 
-    public void imprimirTablero() {
 
-        for(int i = 0; i<7; i++){
-
-            if(tablero[i].cantFichas() != 0){
-
-                System.out.print(i + ". ");
-                tablero[i].imprimirCasilla();
-
-            }
-        }
-    }
 
 
 
@@ -131,7 +119,6 @@ public class Tablero extends JPanel{
             sum += tablero[i].sumCasilla();
 
         }
-        System.out.println(sum);
         return sum;
 
     }

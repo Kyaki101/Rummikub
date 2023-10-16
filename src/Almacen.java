@@ -57,13 +57,7 @@ public class Almacen {
         return cola.size();
     }
 
-    public String toString(){
-        String s = "";
-        for(int i = 0; i < cola.size(); i++){
-            s += cola.get(i).toString();
-        }
-        return s;
-    }
+
 
 
 

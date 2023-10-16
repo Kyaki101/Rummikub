@@ -67,7 +67,6 @@ public class Player extends JFrame implements ActionListener {
         points = 0;
         while(name.equals("")){
             name = texto;
-//            System.out.println(texto);
         }
         deck = new Baraja(a.getCola());
         for(int i = 0; i < 50; i++){
@@ -191,9 +190,8 @@ public class Player extends JFrame implements ActionListener {
         makeDeck();
     }
 
-    public boolean Gano() {
+    public boolean Gano(){
 
-        //return deck.getSize() > 14;
         return deck.getBaraja().isEmpty();
 
     }
@@ -213,17 +211,7 @@ public class Player extends JFrame implements ActionListener {
 
 
 
-    public String toString(){
 
-        String s = "";
-        for(int i = 0; i < deck.getBaraja().size(); i++){
-            if(deck.getBaraja().get(i) != null) {
-                s += i + ".  " + deck.getBaraja().get(i).toString();
-            }
-        }return  "\n\n" + s;
-
-
-    }
 
 
 
@@ -260,6 +248,7 @@ public class Player extends JFrame implements ActionListener {
     public void addPoints(int i){
 
         points += i;
+
     }
 
     public int getPoints() {
