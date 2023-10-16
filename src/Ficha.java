@@ -62,7 +62,7 @@ public class Ficha extends JButton{
         if(isJoker) this.setText("☻");
         else this.setText("" + numero);
         this.setForeground(color);
-        this.setFont(font);
+        this.setFont(font); 
 
     }
 

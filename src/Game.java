@@ -12,7 +12,7 @@ public class Game extends JFrame implements ActionListener {
     private Archive datos;
     private Tablero tablero;
     private List<Player> players = new ArrayList<>();
-    private Almacen almacen;
+    private Almacen almacen = new Almacen();
     private int turn;
     private int size;
     private Player jug;
@@ -27,7 +27,10 @@ public class Game extends JFrame implements ActionListener {
     private Ficha buffer;
     private int[] coords = {-1, -1};
     private int pos;
+    private JLabel cont = new JLabel();
     private Ficha[] stat = new Ficha[50];
+
+    private int alSize = almacen.getCola().size();
 
 
 
@@ -39,7 +42,7 @@ public class Game extends JFrame implements ActionListener {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
         this.setLayout(null);
-        this.setSize(1400, 850);
+        this.setSize(1400, 900);
         size = n;
         almacen = new Almacen();
         tablero = new Tablero();
@@ -244,6 +247,8 @@ public class Game extends JFrame implements ActionListener {
             }
             players.get(turn).setDeck(jug.getDeck());
             players.get(turn).comer(almacen);
+            alSize -= 1;
+            cont.setText("" + alSize);
             refTablero();
             nextTurn(true);
 
@@ -315,6 +320,8 @@ public class Game extends JFrame implements ActionListener {
             }
         }
 
+        alSize = almacen.getCola().size();
+
         comer = new JButton();
         comer.setBounds(1300, 725, 75, 75);
         comer.setText("comer");
@@ -336,6 +343,11 @@ public class Game extends JFrame implements ActionListener {
         ronda.setBounds(678, 25, 200, 30);
         ronda.setText("Es turno de " + players.get(turn).getName());
         this.add(ronda);
+
+        cont.setBounds(1330, 695, 75, 25);
+        cont.setText("" + alSize);
+        cont.setVisible(true);
+        this.add(cont);
 
         JLabel Mazo = new JLabel();
         Mazo.setBounds(700, 677, 200, 30);
