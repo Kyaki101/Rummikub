@@ -1,46 +1,26 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Map;
 
-public class ResultsGUI {
-    private JFrame frame;
-    private JTable table;
-    private DefaultTableModel tableModel;
-    private Archive archive;
+public class ResultsGUI extends JFrame implements ActionListener {
 
-    public ResultsGUI(Archive archive) {
-        this.archive = archive;
-        frame = new JFrame("Tabla de Resultados");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new BorderLayout());
-        frame.setPreferredSize(new Dimension(400, 300));
-
-        String[] columnas = {"Nombre", "Puntaje"};
-        tableModel = new DefaultTableModel(columnas, 0);
-        table = new JTable(tableModel);
-        JScrollPane scrollPane = new JScrollPane(table);
-        frame.add(scrollPane, BorderLayout.CENTER);
-
-        JButton actualizarButton = new JButton("Actualizar Resultados");
-        actualizarButton.setFont(new Font("Arial", Font.PLAIN, 14));
-        actualizarButton.setBackground(new Color(51, 153, 255));
-        actualizarButton.setForeground(Color.WHITE);
-        actualizarButton.setBorderPainted(false);
-        actualizarButton.setFocusPainted(false);
-        actualizarButton.addActionListener(e -> {
-            Map<String, Integer> datos = archive.getData();
-            actualizarTabla(datos);
-        });
-        frame.add(actualizarButton, BorderLayout.SOUTH);
-        frame.pack();
-        frame.setVisible(true);
-    }
-
-    private void actualizarTabla(Map<String, Integer> datos) {
-        tableModel.setRowCount(0);
-        datos.forEach((nombre, puntaje) -> tableModel.addRow(new Object[]{nombre, puntaje}));
+    ResultsGUI(Archive datos){
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setResizable(false);
+        this.setLayout(null);
+        this.setSize(1400, 850);
+        for (Map.Entry<String, Integer> entry : datos.getData().entrySet()) {
+            String key = entry.getKey();
+            Integer value = entry.getValue();
+        }
     }
 
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+    }
 }

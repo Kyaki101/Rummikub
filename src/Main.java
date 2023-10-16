@@ -24,7 +24,7 @@ public class Main {
 
 
         Game g = new Game(pCount, datos);
-        g.Turn(true);
+        g.Turn();
         while(g.getOpen()) Thread.sleep(1000);
 
 

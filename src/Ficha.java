@@ -1,5 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
+import java.awt.font.*;
 
 public class Ficha extends JButton{
 
@@ -16,6 +17,7 @@ public class Ficha extends JButton{
         this.color = Color.WHITE;
         this.setForeground(color);
         this.setText("");
+        this.setFont(font);
 
     }
 
@@ -27,6 +29,7 @@ public class Ficha extends JButton{
         this.color = color;
         this.setForeground(color);
         this.setText(""+this.getNumero());
+        this.setFont(font);
     }
 
     public void clear(){
@@ -36,6 +39,7 @@ public class Ficha extends JButton{
         this.color = Color.WHITE;
         this.setForeground(color);
         this.setText("");
+        this.setFont(font);
 
     }
 
@@ -46,6 +50,7 @@ public class Ficha extends JButton{
         if(isJoker) this.setText("☻");
         else this.setText("" + numero);
         this.setForeground(color);
+        this.setFont(font);
     }
 
 
@@ -57,21 +62,26 @@ public class Ficha extends JButton{
         if(isJoker) this.setText("☻");
         else this.setText("" + numero);
         this.setForeground(color);
+        this.setFont(font);
 
 
 
     }
+
+    private Font font = new Font("Arial", Font.PLAIN, 10);
 
     public void refresh(Game game){
 
         if (this.getJoker()){
             this.setText("☻");
             this.setForeground(Color.BLACK);
+            this.setFont(font);
         }
         else{
 
             this.setText("" + this.getNumero());
             this.setForeground(this.getColor());
+            this.setFont(font);
         }
     }
 
@@ -81,6 +91,7 @@ public class Ficha extends JButton{
         this.color = Color.DARK_GRAY;
         this.setText("☻");
         this.setForeground(Color.DARK_GRAY);
+        this.setFont(font);
     }
 
     public boolean getJoker(){

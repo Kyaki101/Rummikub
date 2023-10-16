@@ -10,24 +10,20 @@ import java.util.ArrayList;
 
 public class Player extends JFrame implements ActionListener {
 
-
-    private boolean winner;
+    private boolean winner, firstTurn;
     private int points;
     private Baraja deck;
     private String name = "";
-
     private String texto = "";
-
     private Ficha[] stat = new Ficha[50];
-
     private JButton conf = new JButton();
-
     JTextField nom = new JTextField();
 
 
 
     public Player(){
 
+        firstTurn = true;
         winner = false;
         points = 0;
         deck = new Baraja();
@@ -38,7 +34,18 @@ public class Player extends JFrame implements ActionListener {
 
     }
 
+    public boolean getFirstTurn(){
+        return firstTurn;
+    }
+
+    public void setFirstTurn(){
+        firstTurn = false;
+    }
+
+
     public Player(Almacen a) {
+
+        firstTurn = true;
         JLabel logo = new JLabel();
         ImageIcon img = new ImageIcon("res/images/player.png");
         logo.setBounds(400, 20, 600, 600);
@@ -74,6 +81,7 @@ public class Player extends JFrame implements ActionListener {
 
 
     public Player(Player a){
+        firstTurn = a.getFirstTurn();
         points = a.getPoints();
         deck = new Baraja();
         name = a.getName();
@@ -88,6 +96,7 @@ public class Player extends JFrame implements ActionListener {
     }
 
     public void refPlayer(Player a){
+        firstTurn = a.getFirstTurn();
         points = a.getPoints();
         deck = new Baraja();
         name = a.getName();
@@ -154,6 +163,7 @@ public class Player extends JFrame implements ActionListener {
 
     public void copy(Player a){
 
+        firstTurn = a.getFirstTurn();
         winner = a.getWinner();
         points = a.getPoints();
         deck.copy(a.getBaraja());

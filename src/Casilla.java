@@ -79,7 +79,7 @@ public class Casilla {
 
         for(int i = 0; i<vis.size(); i++){
 
-            if(vis.get(i).equals(color)) return true;
+            if(vis.get(i) == color) return true;
 
         }return false;
 

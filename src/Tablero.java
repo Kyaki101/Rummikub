@@ -32,11 +32,6 @@ public class Tablero extends JPanel{
     public boolean verify(boolean firstTurn, Tablero aux){
 
         //aqui hay que arreglar el error de que a veces en el primer turno no es obligatorio que la suma de 30 sea correcta
-        System.out.println(firstTurn);
-        System.out.println(this.cantFichas());
-        System.out.println(aux.cantFichas());
-        System.out.println('\n');
-
 
         for(int i = 0; i<7; i++){
 

@@ -11,41 +11,22 @@ public class Game extends JFrame implements ActionListener {
     private boolean isOpen;
     private Archive datos;
     private Tablero tablero;
-
     private List<Player> players = new ArrayList<>();
-
     private Almacen almacen;
-
     private int turn;
-
-    private boolean firstTurn;
-
     private int size;
-
     private Player jug;
-
     private Almacen alm;
-
     private Tablero tab;
-
     private JButton comer;
-
     private JButton devolver;
-
     private JLabel ronda;
-
     private JButton jugada;
-
     private Player safe;
-
     private JButton reiniciarTablero;
-
     private Ficha buffer;
-
     private int[] coords = {-1, -1};
-
     private int pos;
-
     private Ficha[] stat = new Ficha[50];
 
 
@@ -69,7 +50,6 @@ public class Game extends JFrame implements ActionListener {
         alm = new Almacen(almacen);
         jug = new Player(players.get(turn));
         isOpen = true;
-        firstTurn = true;
         for(int i = 0; i < 50; i ++){
             stat[i] = new Ficha();
         }
@@ -104,11 +84,10 @@ public class Game extends JFrame implements ActionListener {
 
     public void nextTurn(boolean comio){
 
+        if(!comio) players.get(turn).setFirstTurn();
+
         turn++;
         turn%=size;
-        if(turn == 0 && !comio){
-            firstTurn = false;
-        }
         jug.copy(players.get(turn));
         tab.copy(tablero);
         alm.copy(almacen);
@@ -283,7 +262,7 @@ public class Game extends JFrame implements ActionListener {
 
 
         if(e.getSource() == jugada){
-            if(tablero.verify(firstTurn, tab)){
+            if(tablero.verify(players.get(turn).getFirstTurn(), tab)){
 
                 if(players.get(turn).getDeck().isEmpty()){
 
@@ -325,7 +304,7 @@ public class Game extends JFrame implements ActionListener {
 
 
 
-    public void Turn(boolean firstTurn) {
+    public void Turn() {
 
         tab.copy(tablero);
         for (int i = 0; i < 7; i++) {
