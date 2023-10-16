@@ -64,8 +64,6 @@ public class Ficha extends JButton{
         this.setForeground(color);
         this.setFont(font);
 
-
-
     }
 
     private Font font = new Font("Arial", Font.PLAIN, 10);
@@ -98,7 +96,6 @@ public class Ficha extends JButton{
         return isJoker;
     }
 
-
     public void setJoker(boolean a){
         this.isJoker = a;
     }
@@ -119,14 +116,6 @@ public class Ficha extends JButton{
         this.color = color;
     }
 
-    public String toString(){
 
-        if(isJoker) return "Joker" + '\n';
-        if(color == Color.RED) return "" + numero + " " + "Rojo" + '\n';
-        if(color == Color.BLUE) return "" + numero + " " + "Azul" + '\n';
-        if(color == Color.BLACK) return "" + numero + " " + "Negro" + '\n';
-        if(color == Color.YELLOW) return "" + numero + " " + "Amarillo" + '\n';
-        return "Ficha vacia";
 
-    }
 }

@@ -60,11 +60,11 @@ public class Game extends JFrame implements ActionListener {
     public void copyDeck(Ficha[] deck){
         for(int i = 0; i < 25; i ++){
             stat[i] = deck[i];
-            this.addFicha(stat[i], i * 40 + 200, 700, 40, 50);
+            this.addFicha(stat[i], i * 50 + 25, 700, 50, 65);
         }
         for(int i = 25; i < 50; i ++){
             stat[i] = deck[i];
-            this.addFicha(stat[i], (i - 25) * 40 + 200, 750, 40, 50);
+            this.addFicha(stat[i], (i - 25) * 50 + 25, 765, 50, 65);
         }
     }
 
@@ -316,7 +316,7 @@ public class Game extends JFrame implements ActionListener {
         }
 
         comer = new JButton();
-        comer.setBounds(1270, 700, 100, 100);
+        comer.setBounds(1300, 725, 75, 75);
         comer.setText("comer");
         comer.addActionListener(this);
         this.add(comer);
@@ -354,14 +354,14 @@ public class Game extends JFrame implements ActionListener {
 
             if (stat[i] != null) {
 
-                addFicha(stat[i], i * 40 + 200, 700, 40, 50);
+                addFicha(stat[i], i * 50 + 25, 700, 50, 65);
 
             }
         }
         for(int i = 25; i < 50; i ++){
             if (stat[i] != null) {
 
-                addFicha(stat[i], (i - 25) * 40 + 200, 750, 40, 50);
+                addFicha(stat[i], (i - 25) * 50 + 25, 765, 50, 65);
 
             }
         }
