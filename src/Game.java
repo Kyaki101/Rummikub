@@ -34,8 +34,9 @@ public class Game extends JFrame implements ActionListener {
 
 
 
-
-
+    //este constructor se encarga de cargar todos los elementos que necesita el jugador para que el juego
+    //sea posible de jugar, tambien se encarga se ajustar el tamaño de la ventana así como agregarle
+    //logica al juego
     public Game(int n, Archive datos){
 
         this.datos = datos;
@@ -60,6 +61,8 @@ public class Game extends JFrame implements ActionListener {
 
     }
 
+    //esta funcion se encarga de copiar la baraja del jugador a quien le corresponda el turno a un
+    //arreglo estatico que nos facilita desplegarlo en pantalla
     public void copyDeck(Ficha[] deck){
         for(int i = 0; i < 25; i ++){
             stat[i] = deck[i];
@@ -86,7 +89,8 @@ public class Game extends JFrame implements ActionListener {
 
 
 
-
+    //la funcion nos ayuda a refrescar el tablero y movernos dentro de la lista de jugadores para
+    //saber que jugador sigue jugando
     public void nextTurn(boolean comio){
 
         if(!comio) players.get(turn).setFirstTurn();
@@ -115,7 +119,7 @@ public class Game extends JFrame implements ActionListener {
 
 
 
-
+    //esta funcion lo que logra es anular todas las fichas del tablero
     public void removeTablero(){
         for(int i = 0; i < 7; i ++){
             for(int j = 0; j < 20; j++){
@@ -125,7 +129,8 @@ public class Game extends JFrame implements ActionListener {
             }
         }
     }
-
+    //esta funcion nos ayuda a copiar el tablero mas actualizado antes de que el jugador
+    //a cual el turno le pertenece haya hecho cambios
     public void addTablero(Tablero tablero){
         for(int i = 0; i < 7; i ++){
             for(int j = 0; j < 20; j++){
@@ -137,6 +142,8 @@ public class Game extends JFrame implements ActionListener {
     }
 
 
+    //esto combina la funcion borrar tablero y agregar tablero para poder refrescar el tablero
+    //cuando el boton de refrescar es presionado
     public void refTablero(){
 
         removeTablero();
@@ -148,13 +155,14 @@ public class Game extends JFrame implements ActionListener {
 
 
 
-
+    //refresca el tablero que esta desplegado en la pantalla del usuario
     private void refDeck(){
 
         removeBar();
 
     }
 
+    //esta funcion logra que la baraja que se desplega en ese momento se anule
     public void removeBar(){
         for(int i = 0; i < 50; i ++){
             removeFicha(stat[i]);
@@ -162,13 +170,14 @@ public class Game extends JFrame implements ActionListener {
     }
 
 
-
+    //esta funcion se encarga de hacer que la ficha pare de ser visible para el usuario
     public void removeFicha(Ficha ficha){
         ficha.setBounds(1500, 0, 0, 0);
         ficha.removeActionListener(this);
         this.remove(ficha);
     }
 
+    //esta funcion se encarga de que la ficha sea visible para el usuario
     public void addFicha(Ficha ficha, int x, int y, int width, int height){
 
 
@@ -190,7 +199,8 @@ public class Game extends JFrame implements ActionListener {
 
 
 
-
+    //la siguiente funcion se encarga de confabular todas las funciones logicas de las clases
+    //ya creadas y les implementa sus dichos metodos
     @Override
     public void actionPerformed(ActionEvent e) {
         for(int i = 0; i < 7; i ++){
@@ -293,7 +303,8 @@ public class Game extends JFrame implements ActionListener {
 
 
 
-
+    //Esta funcion se encarga de asignarle a cada componente de la interfaz grafica su dicha logica
+    //tambien se encarga de darle visibilidad a la pantalla principal
     public void Turn() {
 
         tab.copy(tablero);
@@ -362,7 +373,7 @@ public class Game extends JFrame implements ActionListener {
 
     }
 
-
+    //esta funcion se encarga de darle los puntos ganados a cada jugador de la partida
     public void addPointsW(){
 
         int j = 0;

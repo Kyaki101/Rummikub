@@ -8,7 +8,7 @@ public class Archive {
     private HashMap<String, Integer> data;
 
 
-
+    //el siguiente constructor se encarga de crear un nuevo hash map para almacenar datos de jugadores
     public Archive(){
 
         data = new HashMap<>();
@@ -16,7 +16,7 @@ public class Archive {
     }
 
 
-
+    //La siguiente funcioón se encarga de acualizar datos de jugadores ya creados
    private void update(String name, int points){
 
        Integer aux = data.get(name);
@@ -26,7 +26,7 @@ public class Archive {
    }
 
 
-
+    //Esta función se encarga se traducir una lista de jugadores a un mapa hash
    public void update(List<Player> players){
 
          for(int i = 0; i<players.size(); i++){
@@ -40,7 +40,8 @@ public class Archive {
    }
 
 
-
+    //La siguiente función se encarga de calcular quien es el jugador con el puntaje mas alto
+    //y nombrarlo el ganador
    public String getWinner(){
 
        String winner = null;

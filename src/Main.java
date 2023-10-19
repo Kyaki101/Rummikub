@@ -17,7 +17,7 @@ public class Main {
             int pCount = 0;
             MainMenu m = new MainMenu();
 
-            while (pCount == 0) {
+            while (pCount == 0) { //se encarga de parar el hilo hasta que dicha pantalla se cierre
 
                 pCount = m.getFin();
                 System.out.println(m.getFin());
@@ -25,7 +25,8 @@ public class Main {
 
             Game g = new Game(pCount, datos);
             g.Turn();
-            while (g.getOpen()) Thread.sleep(1000);
+            while (g.getOpen()) Thread.sleep(1000); // se encarga parar el hilo cada segundo por un segundo
+                                                         // mientras se verifica que la pantalla se cierre
 
             ResultGUI res = new ResultGUI(datos);
             while(res.getOpen()) Thread.sleep(1000);
@@ -33,6 +34,8 @@ public class Main {
             end = res.getEnd();
 
         }
+
+        //desplega la pantalla del ganador
         String winner = datos.getWinner();
         new endScreen(winner);
 

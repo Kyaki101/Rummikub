@@ -7,6 +7,8 @@ public class Almacen {
 
     private Color colors[] = {Color.BLACK, Color.YELLOW, Color.BLUE, Color.RED};
 
+
+    //El siguinte constructor se encarga de barajar la fichas y agregarlas a una cola para luego set usadas en el juego
     public Almacen(){
         for(int i = 0; i < 52; i++) {
 
@@ -19,6 +21,7 @@ public class Almacen {
     }
 
 
+    //El siguiente constructor se encarga de copiar un almacen ya creado
     public Almacen(Almacen a){
 
         for(int i = 0; i < a.getCola().size(); i++){
@@ -48,6 +51,7 @@ public class Almacen {
         return cola;
     }
 
+    //la siguiente función se encarga de barajar la cola
     public void barajar(){
         Collections.shuffle(cola);
     }

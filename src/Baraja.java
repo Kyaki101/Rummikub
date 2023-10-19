@@ -23,6 +23,7 @@ public class Baraja {
     }
 
 
+    //se instancia una nueva baraja
     public Baraja(){
 
         fichas = new ArrayList<>();
@@ -35,6 +36,8 @@ public class Baraja {
     }
 
 
+    //la siguiente función se encarga de traducir la lista de fichas a una arreglo estático
+    //esto con la intención de facilitar el proceso de desplegar la baraja en pantalla
     public Ficha[] makeDeck(){
 
         for(int i = 0; i<25; i++) bar[i] = new Ficha();
@@ -63,6 +66,7 @@ public class Baraja {
 
 
 
+    //se le arega una ficha a la baraja del jugador
     public void add(Ficha ficha){
         fichas.add(ficha);
     }
@@ -75,6 +79,7 @@ public class Baraja {
     }
 
 
+    //Se copia una baraja ya existente y se le asigna al jugador
     public void setBaraja(List<Ficha> aux){
 
         fichas = new ArrayList<>(aux);
@@ -92,7 +97,7 @@ public class Baraja {
 
 
 
-
+    //Se copia una baraja ya existente
     public void copy(Baraja newB){
 
         fichas = new ArrayList<>();
@@ -122,12 +127,13 @@ public class Baraja {
 
 
 
-
+    //Se le agrega una nueva Ficha a la baraja
     public void addFicha(int index, Ficha ficha){
         fichas.add(index, ficha);
         fichas.get(fichas.size() - 1).setText(""+fichas.get(fichas.size() - 1).getNumero());
     }
 
+    //se implementa la funcion addFicha para agregarle una nueva ficha a la baraja por medio de la funcion comer
     public void Comer(Almacen a){
 
         if(a.getCola().isEmpty()) return;

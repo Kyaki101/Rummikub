@@ -3,6 +3,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MainMenu extends JFrame implements ActionListener {
+
+    // el constructor se encarga de desplegar todos los elementos
+    // que se instancian para crear una inferfaz de principio de juego
     MainMenu() {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);

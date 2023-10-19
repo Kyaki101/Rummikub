@@ -10,6 +10,8 @@ public class Ficha extends JButton{
     private boolean isJoker;
 
 
+    //el siguente constructor se ultiza para instanciar una ficha nula
+    //con nula nos referimos a que sus valores son 0 y blanco y no es joker
     public Ficha(){
 
         this.isJoker = false;
@@ -22,7 +24,7 @@ public class Ficha extends JButton{
     }
 
 
-
+    //el constructor se utiliza cuando queremos crear una ficha con color y numero
     public Ficha(int numero, Color color){
         this.isJoker = false;
         this.numero = numero;
@@ -32,6 +34,7 @@ public class Ficha extends JButton{
         this.setFont(font);
     }
 
+    //esta funcion se utiliza cuando queremos anular los valores de una ficha
     public void clear(){
 
         this.isJoker = false;
@@ -43,6 +46,7 @@ public class Ficha extends JButton{
 
     }
 
+    //esta funcion se utiliza para copiar los datos de una ficha ya existente sin copiar su direccion de memoria
     public void copy(Ficha ficha){
         this.color = ficha.getColor();
         this.numero = ficha.getNumero();
@@ -54,6 +58,7 @@ public class Ficha extends JButton{
     }
 
 
+    //este constructor se utiliza para crear una nueva ficha en base de una ficha ya existente
     public Ficha(Ficha a){
 
         this.isJoker = a.getJoker();
@@ -68,21 +73,8 @@ public class Ficha extends JButton{
 
     private Font font = new Font("Roboto", Font.BOLD, 10);
 
-    public void refresh(Game game){
 
-        if (this.getJoker()){
-            this.setText("☻");
-            this.setForeground(Color.BLACK);
-            this.setFont(font);
-        }
-        else{
-
-            this.setText("" + this.getNumero());
-            this.setForeground(this.getColor());
-            this.setFont(font);
-        }
-    }
-
+    //este constructor se utiliza cuando queremos crear una ficha tipo joker
     public Ficha(boolean a){
         this.isJoker = a;
         this.numero = 100;

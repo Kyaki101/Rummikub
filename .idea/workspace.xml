@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6a43b76-dc18-4f6a-ba22-05b274cc1efe" name="Changes by daniloduque" comment="Changes by daniloduque">
-      <change afterPath="$PROJECT_DIR$/res/images/congrats.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/images/ricardo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/endScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Almacen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Almacen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Archive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Archive.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Baraja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Baraja.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Casilla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Casilla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ficha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ficha.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tablero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/endScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/endScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +184,10 @@
       <workItem from="1697403404544" duration="7206000" />
       <workItem from="1697470435341" duration="942000" />
       <workItem from="1697475500297" duration="5073000" />
-      <workItem from="1697489428073" duration="8372000" />
+      <workItem from="1697489428073" duration="9192000" />
+      <workItem from="1697514866485" duration="245000" />
+      <workItem from="1697593814842" duration="8000" />
+      <workItem from="1697678246411" duration="4322000" />
     </task>
     <task id="LOCAL-00001" summary="tablero">
       <option name="closed" value="true" />

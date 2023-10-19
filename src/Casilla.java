@@ -6,6 +6,8 @@ public class Casilla {
 
     private Ficha[] fila = new Ficha[20];
 
+
+    //se instancia un arreglo con 20 Fichas
     public Casilla(int y){
 
         for(int i = 0; i<20; i++) {
@@ -15,6 +17,7 @@ public class Casilla {
     }
 
 
+    //se copia una casilla ya creada
     public Casilla(Casilla c){
 
         for(int i = 0; i < 20; i++) fila[i] = new Ficha(c.getFicha(i));
@@ -37,6 +40,7 @@ public class Casilla {
         return fila;
     }
 
+    //se copian los datos de una ficha ya creada a un campo de la casilla
     public void setFicha(Ficha ficha, int i){
         fila[i] = ficha;
     }
@@ -55,6 +59,8 @@ public class Casilla {
 
 
 
+    //se Hacen todas las verificaciones necesarias para asegurar que si se hace una serie
+    //la casilla lo pueda detectar correctamente
     private boolean verifySerie(List<Ficha> serie){
 
         if(serie.size() < 3) return false;
@@ -74,7 +80,8 @@ public class Casilla {
         }return true;
     }
 
-
+    //esta funcion busca si un elemento existe dentro de un grupo, esto para evitar que se hagan
+    //jugadas con colores permitidos
     private boolean search(List<Color> vis, Color color){
 
         for(int i = 0; i<vis.size(); i++){
@@ -85,6 +92,9 @@ public class Casilla {
 
     }
 
+
+    //se hacen todas las verificaciones necesarias para asegurar que la jugada que contenga
+    //un grupo sea valida
     private boolean verifyGroup(List<Ficha> group){
 
         if(group.size() < 3) return false;
@@ -122,7 +132,8 @@ public class Casilla {
 
 
 
-
+    //se utilizan la funciones verifyGroup y verifySerie en pareja para poder hacer revisiones rapidamente
+    //dependiendo de la jugada que se esta haciendo
     public boolean verify(){
 
         List<Ficha> verifier = new ArrayList<>();
@@ -156,7 +167,7 @@ public class Casilla {
 
 
 
-
+    //se agrega una ficha al tablero si y solo si la ficha no tiene datos
     public boolean addFicha(Ficha ficha, int i){
 
         if(fila[i].getNumero() != 0)return false;
@@ -166,7 +177,7 @@ public class Casilla {
     }
 
 
-
+    //se le quitan los datos a la ficha en el i-esimo espacio
     public void removeFicha(int i){
 
         fila[i] = new Ficha();
@@ -206,7 +217,7 @@ public class Casilla {
 
 
 
-
+    //se calcula la suma de las fichas en dicha casilla mediante una iteracion sobre cada elemento de ella
     public int sumCasilla(){
 
         int sum = 0;

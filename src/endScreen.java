@@ -14,6 +14,9 @@ public class endScreen extends JFrame implements ActionListener {
     JLabel fx = new JLabel();
 
 
+    //al constructor se le agregan todos los botones y se le agregan los atributos necesarios
+    //para que la ventana se pueda ver
+    //tambien implemetna labels para poder desplegar imagenes al jugador que gana
     endScreen(String player) throws InterruptedException {
         this.setSize(1400, 900);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
