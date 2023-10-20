@@ -6,7 +6,7 @@ import javax.swing.*;
 public class Tablero extends JPanel{
 
 
-    public Casilla[] tablero = new Casilla[7];
+    private Casilla[] tablero = new Casilla[7];
 
 
 

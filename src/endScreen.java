@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.lang.InterruptedException;
 
 
-public class endScreen extends JFrame implements ActionListener {
+public class endScreen extends JFrame{
 
     JButton terminate = new JButton();
 
