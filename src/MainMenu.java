@@ -46,6 +46,7 @@ public class MainMenu extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == validate){
             String texto = playerCount.getText();
+            //se hacen verificaciones para asegurar que el texto insertado sea valido
             if (texto == ""){
                 JOptionPane.showMessageDialog(null, "No se ha escrito nada");
             }
@@ -54,7 +55,6 @@ public class MainMenu extends JFrame implements ActionListener {
                 this.dispose();
             }
             else{
-                System.out.println(texto + "huh?");
                 JOptionPane.showMessageDialog(null, "El numero no es valido");
             }
         }

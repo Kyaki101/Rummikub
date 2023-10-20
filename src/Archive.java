@@ -48,9 +48,9 @@ public class Archive {
        int maxPoints = Integer.MIN_VALUE;
 
        for (HashMap.Entry<String, Integer> entry : data.entrySet()) {
-           String key = entry.getKey();
-           Integer value = entry.getValue();
-
+           String key = entry.getKey();//se inserta nombre del jugador
+           Integer value = entry.getValue();//se le insertan y conectan los puntos a cada jugador
+            //se encuentra el jugador con la mayor cantidad de puntos
            if (value > maxPoints) {
                maxPoints = value;
                winner = key;

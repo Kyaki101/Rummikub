@@ -11,7 +11,7 @@ public class Almacen {
     //El siguinte constructor se encarga de barajar la fichas y agregarlas a una cola para luego set usadas en el juego
     public Almacen(){
         for(int i = 0; i < 52; i++) {
-
+            //se agregan a la cola
             cola.add(new Ficha(i % 13 + 1, colors[i / 13]));
             cola.add(new Ficha(i % 13 + 1, colors[i / 13]));
         }

@@ -30,6 +30,7 @@ public class Tablero extends JPanel{
 
 
     public boolean verify(boolean firstTurn, Tablero aux){
+        //verifica si las jugadas del tablero son validas
 
 
         for(int i = 0; i<7; i++){
@@ -48,6 +49,7 @@ public class Tablero extends JPanel{
 
 
     public boolean insertarFicha(Ficha ficha, int posicion, int i){
+        //inserta ficha
 
         if(tablero[posicion].addFicha(ficha, i)) return true;
         return false;
@@ -57,6 +59,7 @@ public class Tablero extends JPanel{
 
 
     public void copy(Tablero t){
+        //copia un tablero ya creado
 
         tablero = new Casilla[7];
         for(int i = 0; i < 7; i++){
@@ -72,6 +75,7 @@ public class Tablero extends JPanel{
 
 
     public void cambiarFicha(int posicion1, int posicion2, int i, int j){
+        //cambia la posicion de dos fichas en el tabelro
 
         Ficha ficha1 = tablero[posicion1].getFicha(i);
         Ficha ficha2 = tablero[posicion2].getFicha(j);
@@ -112,7 +116,7 @@ public class Tablero extends JPanel{
 
 
     public int sumTablero(){
-
+        //se calucla la suma de los valores del tablero
         int sum = 0;
         for(int i = 0; i<7; i++){
 
@@ -125,7 +129,7 @@ public class Tablero extends JPanel{
 
 
     public int cantFichas(){
-
+        //suma la cantidad de fichas del tablero
         int sum = 0;
         for(int i = 0; i<7; i++){
 

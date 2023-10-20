@@ -10,7 +10,6 @@
       <change beforePath="$PROJECT_DIR$/src/Archive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Archive.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Baraja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Baraja.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Casilla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Casilla.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ficha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ficha.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/endScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/endScreen.java" afterDir="false" />
     </list>
@@ -187,7 +186,10 @@
       <workItem from="1697489428073" duration="9192000" />
       <workItem from="1697514866485" duration="245000" />
       <workItem from="1697593814842" duration="8000" />
-      <workItem from="1697678246411" duration="4322000" />
+      <workItem from="1697678246411" duration="5383000" />
+      <workItem from="1697750065750" duration="2019000" />
+      <workItem from="1697759754596" duration="668000" />
+      <workItem from="1697840445226" duration="741000" />
     </task>
     <task id="LOCAL-00001" summary="tablero">
       <option name="closed" value="true" />

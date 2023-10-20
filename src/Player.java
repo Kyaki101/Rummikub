@@ -45,22 +45,22 @@ public class Player extends JFrame implements ActionListener {
 
     public Player(Almacen a) {
 
-        firstTurn = true;
-        JLabel logo = new JLabel();
-        ImageIcon img = new ImageIcon("res/images/player.png");
-        logo.setBounds(400, 20, 600, 600);
-        logo.setIcon(img);
-        logo.setVisible(true);
-        this.add(logo);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setResizable(false);
+        firstTurn = true;//verifica si ya hizo la jugada inicial
+        JLabel logo = new JLabel();//se declara boton nuevo
+        ImageIcon img = new ImageIcon("res/images/player.png");//se carga imagen
+        logo.setBounds(400, 20, 600, 600);//se agregan coordenadas para donde se desplega elemento
+        logo.setIcon(img);//se le agrega imagen al elemento
+        logo.setVisible(true);//se hace visible el elemento
+        this.add(logo);//se agrega elemento a interfaz
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);//se cierra programa cuando cierra la pantalla
+        this.setResizable(false);//hace que la pantalla no sea mutable
         this.setLayout(null);
-        this.setSize(1400, 850);
+        this.setSize(1400, 850);//setea tamaño de la pantalla
         nom.setText("Nombre de jugador");
         nom.setBounds(400, 700, 400, 50);
         this.add(nom);
         conf.addActionListener(this);
-        conf.setText("Confirmar");
+        conf.setText("Confirmar");//agrega texto al elemento
         conf.setBounds(820, 700, 100, 50);
         this.add(conf);
         this.setVisible(true);
@@ -94,6 +94,7 @@ public class Player extends JFrame implements ActionListener {
 
     }
 
+    //copia los elementos de otro jugador ya creado
     public void refPlayer(Player a){
         firstTurn = a.getFirstTurn();
         points = a.getPoints();
@@ -104,13 +105,14 @@ public class Player extends JFrame implements ActionListener {
         }
     }
 
+    //agrega ficha al jugador
     public void addFicha(int index, Ficha ficha){
         deck.addFicha(index, ficha);
         makeDeck();
     }
 
 
-
+    //se copia braja auxiliar
     public void setDeck(List<Ficha> aux){
 
         deck.setBaraja(aux);
@@ -125,6 +127,8 @@ public class Player extends JFrame implements ActionListener {
     }
 
 
+    //copia todos los elementos de la lista a un arreglo estatico
+    //esto para facilitar el uso de el
     public Ficha[] makeDeck(){
 
         for(int i = 0; i<50; i++){
@@ -185,13 +189,13 @@ public class Player extends JFrame implements ActionListener {
 
 
     public void comer(Almacen a) {
-
+        //se le agregan fichas a la baraja del jugador
         deck.Comer(a);
         makeDeck();
     }
 
     public boolean Gano(){
-
+        //verifica si el jugador gana la partida por tener una baraja vacia
         return deck.getBaraja().isEmpty();
 
     }
@@ -216,7 +220,7 @@ public class Player extends JFrame implements ActionListener {
 
 
 
-
+    //se elimina ficha de baraja del jugador
     public Ficha eliminarFicha(int i){
 
         Ficha f = deck.getBaraja().get(i);

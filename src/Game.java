@@ -203,21 +203,22 @@ public class Game extends JFrame implements ActionListener {
     //ya creadas y les implementa sus dichos metodos
     @Override
     public void actionPerformed(ActionEvent e) {
+        //estos dos for's se utilizan para iterar sobre cada boton del tablero y revisar si son presionados
         for(int i = 0; i < 7; i ++){
             for(int j = 0; j < 20; j ++){
                 Ficha current = tablero.getTablero()[i].getCasilla()[j];
-                if (e.getSource() == current){
-                    if(buffer != null && current.getNumero() == 0){
+                if (e.getSource() == current){//si el boton no tiene datos se le agregan los datos del buffer
+                    if(buffer != null && current.getNumero() == 0){//buffer se utiliza para almacenar temporalmente datos
                         tablero.getTablero()[i].getCasilla()[j].copy(buffer);
-                        buffer = null;
+                        buffer = null;//se vacia el buffer
                     }
-                    else if(buffer == null){
+                    else if(buffer == null){//si el buffer es nulo, entocnes almacena los datos que hay en la casilla
                         buffer = new Ficha(current);
                         coords[0] = i;
                         coords[1] = j;
                         current.clear();
                     }
-                    else if(buffer != null && coords[0] != -1){
+                    else if(buffer != null && coords[0] != -1){//se intercambian los valores de las dos fichas que fueron presionadas
                         tablero.getTablero()[coords[0]].getCasilla()[coords[1]].copy(current);
                         current.copy(buffer);
                         buffer = null;
@@ -228,9 +229,9 @@ public class Game extends JFrame implements ActionListener {
             }
         }
 
-        for(int i = 0; i < 50; i ++){
+        for(int i = 0; i < 50; i ++){//el for se utiliza para revisar todos los botones en baraja
             if(e.getSource() == stat[i] && buffer == null){
-
+                //se cargan los datos de la i-esima ficha para luego copiarlos al tablero
                 buffer = new Ficha(stat[i]);
                 pos = i;
                 if(players.get(turn).getDeck().size() >= i){
@@ -243,7 +244,8 @@ public class Game extends JFrame implements ActionListener {
         }
         if(e.getSource() == comer){
 
-
+            //si se presiona el boton de comer, el jugador quien le corresponda el turno va a comer
+            //tambien luego de que es presionado, se cambia de turno
             if(almacen.getCola().isEmpty()){
 
                 addPointsE();
@@ -265,6 +267,8 @@ public class Game extends JFrame implements ActionListener {
 
 
         if(e.getSource() == jugada){
+            //al ser presionado el boton de jugada, el programa procede a verificar si el tablero es valido
+            //si lo es, procede a cambiar de turno, y si no, no hace nada
             if(tablero.verify(players.get(turn).getFirstTurn(), tab)){
 
                 if(players.get(turn).Gano()){
@@ -292,6 +296,8 @@ public class Game extends JFrame implements ActionListener {
 
         }
         if(e.getSource() == reiniciarTablero){
+            //el tablero vuelve al estado en el que estaba antes de que el jugador haya hecho
+            //modificaciones
             buffer = null;
             players.get(turn).setDeck(jug.getDeck());
             refDeck();
@@ -317,7 +323,7 @@ public class Game extends JFrame implements ActionListener {
         }
 
         alSize = almacen.getCola().size();
-
+        //añade botones a la pantalla y les agrega un action listener para agregarles utilidad
         comer = new JButton();
         comer.setBounds(1300, 725, 75, 75);
         comer.setText("comer");
@@ -354,6 +360,7 @@ public class Game extends JFrame implements ActionListener {
         reiniciarTablero.addActionListener(this);
         this.add(reiniciarTablero);
 
+        //se desplegan todas las fichas de la baraja del jugador
         for (int i = 0; i < 25; i++) {
 
             if (stat[i] != null) {

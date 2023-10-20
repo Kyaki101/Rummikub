@@ -43,13 +43,13 @@ public class Baraja {
         for(int i = 0; i<25; i++) bar[i] = new Ficha();
         for(int i = 0; i<25; i++){
 
-            if(i >= fichas.size()){
-                bar[i].setColor(Color.WHITE);
-                bar[i].setNumero(0);
-                bar[i].setForeground(bar[i].getColor());
-                bar[i].setText("");
+            if(i >= fichas.size()){//se ejectura si i entra a una casilla que no exista en la baraja
+                bar[i].setColor(Color.WHITE);//se usa un color nulo
+                bar[i].setNumero(0);//se usa el cero como numero por defecto
+                bar[i].setForeground(bar[i].getColor());//copia color del texto
+                bar[i].setText("");//vacia el texto
             }
-            else{
+            else{//se ejecuta si i es valido
 
                 bar[i].setColor(fichas.get(i).getColor());
                 bar[i].setNumero(fichas.get(i).getNumero());
@@ -72,7 +72,7 @@ public class Baraja {
     }
 
 
-    public int getSize(){
+    public int getSize(){//devuelve tamaño de la ficha
 
         return fichas.size();
 
@@ -85,6 +85,8 @@ public class Baraja {
         fichas = new ArrayList<>(aux);
 
     }
+
+    //se encuentra ficha en la i-esima ubicación
     public Ficha get(int i){
 
         return fichas.get(i);
@@ -107,7 +109,7 @@ public class Baraja {
 
 
 
-
+    //se cargan fichas a la baraja
     public Baraja(List<Ficha> cola){
         for(int i = 0; i < 14; i++){
             fichas.add(cola.get(0));

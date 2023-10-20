@@ -140,11 +140,11 @@ public class Casilla {
         int i = 0;
         while(i<20){
 
-            if(fila[i].getNumero() != 0){
+            if(fila[i].getNumero() != 0){//si la ficha no es nula
 
-                while(fila[i].getNumero() != 0 && i<20){
-                    verifier.add(fila[i]);
-                    i++;
+                while(fila[i].getNumero() != 0 && i<20){//empieza a revisar desde que la primera ficha
+                    verifier.add(fila[i]);              //no es nula hasta que paren de se nulas o hasta que se
+                    i++;                                //llegue a 20
 
                 }
                 if(!this.verifySerie(verifier) && !this.verifyGroup(verifier)){
