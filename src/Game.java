@@ -411,8 +411,6 @@ public class Game extends JFrame implements ActionListener {
             }
 
         }
-
-        System.out.println("El jugador " + players.get(index).getName() + " ha ganado");
         for(int i = 0; i<players.size(); i++){
 
             if(i!=index) players.get(i).addPoints(-players.get(i).sumPoints());
